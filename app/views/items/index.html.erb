@@ -1,0 +1,96 @@
+  <head>
+        <!--testing piviotla-->
+        <%= stylesheet_link_tag "main.css" %>
+        <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+                $(function(){
+                  $(".circle").click(function(){
+                     $(this).css("background", "#58488A");
+                  });
+                });
+    </script>
+
+         <title>Saw You</title>
+
+    </head>
+<body>
+
+        <div id="HeadBar">
+                        <div id="logo">
+                                <h1>Spotted</h1>
+                                <!--<%= link_to image_tag('Logo.png')%>   uncomment this line to add the logo.png back-->
+                        </div>
+
+                        <div id="filter">
+                        <%=form_for items_path, :method => 'get' do %>
+                                  Filter By<%= text_field :search, ""%>
+                                  <%= submit_tag "Search", :name => 'search button'%>
+                        <% end %>
+                        </div>
+
+                        <div id="user-widget">
+                          <% if current_user %>
+                                Welcome <strong><%= current_user.name %></strong>!
+                                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+                          <% else %>
+                                <%= link_to image_tag('facebook.png'), id: "facebook_icon"%>
+                                <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+                          <% end %>
+                        </div>
+        </div>
+
+
+        <div id="NavMenu">
+                
+                <div id="TagPost">
+                <% if current_user %>
+                <h3 id="post">Make A Post</h3>
+                        <%= form_for :item do |f| %>
+
+                                <div id ="tagform"; class="rounded-corners">
+                                Tag: <%= f.text_field :tag%><br />
+                                </div>
+
+                                <div id="postform">
+                                Post: <%= f.text_field :post%><br />
+                                <%= f.submit "Post"%>
+                                </div>
+
+                        <%end%>
+                <%else%>
+                        <br></br>
+                        Please login to post
+                        <br></br>
+                <%end%>
+        </div>
+
+        </div>
+
+
+        <div id="midSection">
+
+
+
+
+                <table id="PostIndex"> 
+                  <tr>
+                          <th>Color</th>
+                        <th>Post</th>
+                        <th>Tag</th>
+                        <th>When</th>
+                        <th>Delete</th>
+
+                  </tr>
+
+                        <% @items.each do |t| %>
+                                 <tr>
+                                         <td><div class="circle"1></div></td>
+                                        <td><%= t.post %></td>
+                                        <td><%= t.tag %></td>
+                                        <td><%= format_timesince(t.created_at) %></td>
+                                        <td id="delete_tag"><%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %></td>
+                                </tr>
+                        <% end %>
+                </table>
+        </div>
+</body>

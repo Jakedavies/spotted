@@ -1,0 +1,21 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: likealittle_development
+  pool: 5
+  username: lal
+  password: test
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: likealittle_test
+  pool: 5
+  username: lal
+  password: test
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: likealittle_production
+  pool: 5
+  username: lal
+  password: test

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<%= stylesheet_link_tag "StylesheetLanding.css" %>
+    <title>Spotted!</title>
+</head>
+<body>
+
+    <div id ="Top_Bar">
+
+        <p id="catch">Shockingly Addictive </p>
+    </div>
+
+    <div id ="Nav_Bar" >
+        <p id ="Nav"> A Whole New Way to Say Hello.</p>
+
+            <div id="Lup">
+              <% if current_user %>
+                Welcome <strong><%= current_user.name %></strong>!
+                <%= link_to "Sign out", signout_path, id: "sign_out" %>
+              <% else %>
+                <%= link_to image_tag('facebook.png'), id: "facebook_icon"%>
+                <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+              <% end %>
+            </div>
+
+        <div id="paragraph1">Spotted is a unique service that connects users on campus. When you see someone and want to say hello to, try spotted!</div>
+
+        <%= link_to image_tag('ChatBubble.png'), id:"cbubble1" %>
+
+        <p id="Example_Post">To whoever was wearing the grey hoodie today. Keep that shit up.
+            #Soci-111</p>
+        <div id="paragraph2">"Create a profile. Upload your courses, and see who may have spotted you."</div>
+
+    </div>
+<div id="CrapBack">
+
+
+</div>
+
+</body>
+</html>
