@@ -2007,3 +2007,2439 @@ Served asset /welcome.js - 304 Not Modified (0ms)
 
 Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-10 21:35:22 -0800
 Served asset /FontAwesome.otf - 304 Not Modified (2ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:38:03 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  Rendered items/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-10 21:38:03 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-10 21:38:03 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:40:32 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-10 21:40:32 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-10 21:40:32 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-10 21:40:32 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:47:35 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" [0m
+ERROR: compiling _app_views_items_index_html_erb__2356249964060647348_25912700 RAISED /home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...uffer.append= ( if can_delete );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_items_index_html_erb__2356249964060647348_25912700(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "items/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('  <head>
+        <!--testing piviotla-->
+        ');@output_buffer.append= ( stylesheet_link_tag "main.css" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+        <script type="text/javascript">
+                    $(function(){
+                      $(".circle").click(function(){
+                         $(this).css("background", "#58488A");
+                      });
+                    });
+        </script>
+
+         <title>Saw You</title>
+
+    </head>
+<body>
+
+        <div id="HeadBar">
+                        <div id="logo">
+                                <h1>Spotted</h1>
+                                <!--');@output_buffer.append= ( link_to image_tag('Logo.png'));@output_buffer.safe_concat('   uncomment this line to add the logo.png back-->
+                        </div>
+
+                        <div id="filter">
+                        ');@output_buffer.append= form_for items_path, :method => 'get' do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  Filter By');@output_buffer.append= ( text_field :search, "");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  ');@output_buffer.append= ( submit_tag "Search", :name => 'search button');@output_buffer.safe_concat('
+');                         end 
+@output_buffer.safe_concat('                        </div>
+
+                        <div id="user-widget">
+');                           if current_user 
+@output_buffer.safe_concat('                                Welcome <strong>');@output_buffer.append= ( current_user.name );@output_buffer.safe_concat('</strong>!
+                                ');@output_buffer.append= ( link_to "Sign out", signout_path, id: "sign_out" );@output_buffer.safe_concat('
+');                           else 
+@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to image_tag('facebook.png'), id: "facebook_icon");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" );@output_buffer.safe_concat('
+');                           end 
+@output_buffer.safe_concat('                        </div>
+        </div>
+
+
+        <div id="NavMenu">
+                
+                <div id="TagPost">
+');                 if current_user 
+@output_buffer.safe_concat('                <h3 id="post">Make A Post</h3>
+                        ');@output_buffer.append=  form_for :item do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                <div id ="tagform"; class="rounded-corners">
+                                Tag: ');@output_buffer.append= ( f.text_field :tag);@output_buffer.safe_concat('<br />
+                                </div>
+
+                                <div id="postform">
+                                Post: ');@output_buffer.append= ( f.text_field :post);@output_buffer.safe_concat('<br />
+                                ');@output_buffer.append= ( f.submit "Post");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                </div>
+
+');                        end
+                else
+@output_buffer.safe_concat('                        <br>
+                        Please login to post
+                        <br>
+');                end
+@output_buffer.safe_concat('        </div>
+
+        </div>
+
+
+        <div id="midSection">
+
+
+
+
+                <table id="PostIndex"> 
+                  <tr>
+                        <th>Color</th>
+                        <th>Post</th>
+                        <th>Tag</th>
+                        <th>When</th>
+                        <th>Delete</th>
+
+                  </tr>
+
+');                         @items.each do |t| 
+@output_buffer.safe_concat('                                 <tr>
+                                        <td><div class="circle"1></div></td>
+                                        <td>');@output_buffer.append= ( t.post );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( t.tag );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( format_timesince(t.created_at) );@output_buffer.safe_concat('</td>
+                                        <td id="delete_tag">
+                                          ');@output_buffer.append= ( if can_delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            ');@output_buffer.append= ( link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                          ');@output_buffer.append= ( else );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            Can\'t delete
+                                          ');@output_buffer.append= ( end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                        </td>
+                                </tr>
+');                         end 
+@output_buffer.safe_concat('                </table>
+        </div>
+</body>');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `module_eval'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `compile'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:244:in `block in compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `synchronize'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:144:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:125:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:143:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:19:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:88:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:167:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:121:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:45:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:203:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:246:in `block in action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/query_cache.rb:64:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:32:in `call_app'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/engine.rb:484:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/application.rb:231:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered items/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 14ms
+
+ActionView::Template::Error (/home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...uffer.append= ( if can_delete );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'):
+    89:                                         <td><%= t.tag %></td>
+    90:                                         <td><%= format_timesince(t.created_at) %></td>
+    91:                                         <td id="delete_tag">
+    92:                                           <%= if can_delete %>
+    93:                                             <%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
+    94:                                           <%= else %>
+    95:                                             Can't delete
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.14) lib/action_view/template.rb:244:in `block in compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `synchronize'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.14) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.14) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:19:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/builder.rb:49:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.7ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:50:31 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" 
+ERROR: compiling _app_views_items_index_html_erb__2356249964060647348_69993644476360 RAISED /home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...( if can_delete(t.created_at) );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_items_index_html_erb__2356249964060647348_69993644476360(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "items/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('  <head>
+        <!--testing piviotla-->
+        ');@output_buffer.append= ( stylesheet_link_tag "main.css" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+        <script type="text/javascript">
+                    $(function(){
+                      $(".circle").click(function(){
+                         $(this).css("background", "#58488A");
+                      });
+                    });
+        </script>
+
+         <title>Saw You</title>
+
+    </head>
+<body>
+
+        <div id="HeadBar">
+                        <div id="logo">
+                                <h1>Spotted</h1>
+                                <!--');@output_buffer.append= ( link_to image_tag('Logo.png'));@output_buffer.safe_concat('   uncomment this line to add the logo.png back-->
+                        </div>
+
+                        <div id="filter">
+                        ');@output_buffer.append= form_for items_path, :method => 'get' do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  Filter By');@output_buffer.append= ( text_field :search, "");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  ');@output_buffer.append= ( submit_tag "Search", :name => 'search button');@output_buffer.safe_concat('
+');                         end 
+@output_buffer.safe_concat('                        </div>
+
+                        <div id="user-widget">
+');                           if current_user 
+@output_buffer.safe_concat('                                Welcome <strong>');@output_buffer.append= ( current_user.name );@output_buffer.safe_concat('</strong>!
+                                ');@output_buffer.append= ( link_to "Sign out", signout_path, id: "sign_out" );@output_buffer.safe_concat('
+');                           else 
+@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to image_tag('facebook.png'), id: "facebook_icon");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" );@output_buffer.safe_concat('
+');                           end 
+@output_buffer.safe_concat('                        </div>
+        </div>
+
+
+        <div id="NavMenu">
+                
+                <div id="TagPost">
+');                 if current_user 
+@output_buffer.safe_concat('                <h3 id="post">Make A Post</h3>
+                        ');@output_buffer.append=  form_for :item do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                <div id ="tagform"; class="rounded-corners">
+                                Tag: ');@output_buffer.append= ( f.text_field :tag);@output_buffer.safe_concat('<br />
+                                </div>
+
+                                <div id="postform">
+                                Post: ');@output_buffer.append= ( f.text_field :post);@output_buffer.safe_concat('<br />
+                                ');@output_buffer.append= ( f.submit "Post");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                </div>
+
+');                        end
+                else
+@output_buffer.safe_concat('                        <br>
+                        Please login to post
+                        <br>
+');                end
+@output_buffer.safe_concat('        </div>
+
+        </div>
+
+
+        <div id="midSection">
+
+
+
+
+                <table id="PostIndex"> 
+                  <tr>
+                        <th>Color</th>
+                        <th>Post</th>
+                        <th>Tag</th>
+                        <th>When</th>
+                        <th>Delete</th>
+
+                  </tr>
+
+');                         @items.each do |t| 
+@output_buffer.safe_concat('                                 <tr>
+                                        <td><div class="circle"1></div></td>
+                                        <td>');@output_buffer.append= ( t.post );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( t.tag );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( format_timesince(t.created_at) );@output_buffer.safe_concat('</td>
+                                        <td id="delete_tag">
+                                          ');@output_buffer.append= ( if can_delete(t.created_at) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            ');@output_buffer.append= ( link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                          ');@output_buffer.append= ( else );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            Can\'t delete
+                                          ');@output_buffer.append= ( end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                        </td>
+                                </tr>
+');                         end 
+@output_buffer.safe_concat('                </table>
+        </div>
+</body>');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `module_eval'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `compile'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:244:in `block in compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `synchronize'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:144:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:125:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:143:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:19:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:88:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:167:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:121:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:45:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:203:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:246:in `block in action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/query_cache.rb:64:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:32:in `call_app'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/engine.rb:484:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/application.rb:231:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered items/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (/home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...( if can_delete(t.created_at) );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'):
+    89:                                         <td><%= t.tag %></td>
+    90:                                         <td><%= format_timesince(t.created_at) %></td>
+    91:                                         <td id="delete_tag">
+    92:                                           <%= if can_delete(t.created_at) %>
+    93:                                             <%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
+    94:                                           <%= else %>
+    95:                                             Can't delete
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.14) lib/action_view/template.rb:244:in `block in compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `synchronize'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.14) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.14) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:19:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/builder.rb:49:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.6ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:54:12 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" [0m
+ERROR: compiling _app_views_items_index_html_erb__2356249964060647348_69993644476360 RAISED /home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...( if can_delete(t.created_at) );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_items_index_html_erb__2356249964060647348_69993644476360(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "items/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('  <head>
+        <!--testing piviotla-->
+        ');@output_buffer.append= ( stylesheet_link_tag "main.css" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+        <script type="text/javascript">
+                    $(function(){
+                      $(".circle").click(function(){
+                         $(this).css("background", "#58488A");
+                      });
+                    });
+        </script>
+
+         <title>Saw You</title>
+
+    </head>
+<body>
+
+        <div id="HeadBar">
+                        <div id="logo">
+                                <h1>Spotted</h1>
+                                <!--');@output_buffer.append= ( link_to image_tag('Logo.png'));@output_buffer.safe_concat('   uncomment this line to add the logo.png back-->
+                        </div>
+
+                        <div id="filter">
+                        ');@output_buffer.append= form_for items_path, :method => 'get' do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  Filter By');@output_buffer.append= ( text_field :search, "");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  ');@output_buffer.append= ( submit_tag "Search", :name => 'search button');@output_buffer.safe_concat('
+');                         end 
+@output_buffer.safe_concat('                        </div>
+
+                        <div id="user-widget">
+');                           if current_user 
+@output_buffer.safe_concat('                                Welcome <strong>');@output_buffer.append= ( current_user.name );@output_buffer.safe_concat('</strong>!
+                                ');@output_buffer.append= ( link_to "Sign out", signout_path, id: "sign_out" );@output_buffer.safe_concat('
+');                           else 
+@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to image_tag('facebook.png'), id: "facebook_icon");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" );@output_buffer.safe_concat('
+');                           end 
+@output_buffer.safe_concat('                        </div>
+        </div>
+
+
+        <div id="NavMenu">
+                
+                <div id="TagPost">
+');                 if current_user 
+@output_buffer.safe_concat('                <h3 id="post">Make A Post</h3>
+                        ');@output_buffer.append=  form_for :item do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                <div id ="tagform"; class="rounded-corners">
+                                Tag: ');@output_buffer.append= ( f.text_field :tag);@output_buffer.safe_concat('<br />
+                                </div>
+
+                                <div id="postform">
+                                Post: ');@output_buffer.append= ( f.text_field :post);@output_buffer.safe_concat('<br />
+                                ');@output_buffer.append= ( f.submit "Post");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                </div>
+
+');                        end
+                else
+@output_buffer.safe_concat('                        <br>
+                        Please login to post
+                        <br>
+');                end
+@output_buffer.safe_concat('        </div>
+
+        </div>
+
+
+        <div id="midSection">
+
+
+
+
+                <table id="PostIndex"> 
+                  <tr>
+                        <th>Color</th>
+                        <th>Post</th>
+                        <th>Tag</th>
+                        <th>When</th>
+                        <th>Delete</th>
+
+                  </tr>
+
+');                         @items.each do |t| 
+@output_buffer.safe_concat('                                 <tr>
+                                        <td><div class="circle"1></div></td>
+                                        <td>');@output_buffer.append= ( t.post );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( t.tag );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( format_timesince(t.created_at) );@output_buffer.safe_concat('</td>
+                                        <td id="delete_tag">
+                                          ');@output_buffer.append= ( if can_delete(t.created_at) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            ');@output_buffer.append= ( link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                          ');@output_buffer.append= ( else );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            Can\'t delete
+                                          ');@output_buffer.append= ( end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                        </td>
+                                </tr>
+');                         end 
+@output_buffer.safe_concat('                </table>
+        </div>
+</body>');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `module_eval'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `compile'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:244:in `block in compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `synchronize'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:144:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:125:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:143:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:19:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:88:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:167:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:121:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:45:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:203:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:246:in `block in action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/query_cache.rb:64:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:32:in `call_app'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/engine.rb:484:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/application.rb:231:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered items/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (/home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...( if can_delete(t.created_at) );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'):
+    89:                                         <td><%= t.tag %></td>
+    90:                                         <td><%= format_timesince(t.created_at) %></td>
+    91:                                         <td id="delete_tag">
+    92:                                           <%= if can_delete(t.created_at) %>
+    93:                                             <%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
+    94:                                           <%= else %>
+    95:                                             Can't delete
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.14) lib/action_view/template.rb:244:in `block in compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `synchronize'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.14) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.14) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:19:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/builder.rb:49:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.5ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:55:00 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+ERROR: compiling _app_views_items_index_html_erb__2356249964060647348_69993644476360 RAISED /home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...( if can_delete(t.created_at) );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_items_index_html_erb__2356249964060647348_69993644476360(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "items/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('  <head>
+        <!--testing piviotla-->
+        ');@output_buffer.append= ( stylesheet_link_tag "main.css" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+        <script type="text/javascript">
+                    $(function(){
+                      $(".circle").click(function(){
+                         $(this).css("background", "#58488A");
+                      });
+                    });
+        </script>
+
+         <title>Saw You</title>
+
+    </head>
+<body>
+
+        <div id="HeadBar">
+                        <div id="logo">
+                                <h1>Spotted</h1>
+                                <!--');@output_buffer.append= ( link_to image_tag('Logo.png'));@output_buffer.safe_concat('   uncomment this line to add the logo.png back-->
+                        </div>
+
+                        <div id="filter">
+                        ');@output_buffer.append= form_for items_path, :method => 'get' do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  Filter By');@output_buffer.append= ( text_field :search, "");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  ');@output_buffer.append= ( submit_tag "Search", :name => 'search button');@output_buffer.safe_concat('
+');                         end 
+@output_buffer.safe_concat('                        </div>
+
+                        <div id="user-widget">
+');                           if current_user 
+@output_buffer.safe_concat('                                Welcome <strong>');@output_buffer.append= ( current_user.name );@output_buffer.safe_concat('</strong>!
+                                ');@output_buffer.append= ( link_to "Sign out", signout_path, id: "sign_out" );@output_buffer.safe_concat('
+');                           else 
+@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to image_tag('facebook.png'), id: "facebook_icon");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" );@output_buffer.safe_concat('
+');                           end 
+@output_buffer.safe_concat('                        </div>
+        </div>
+
+
+        <div id="NavMenu">
+                
+                <div id="TagPost">
+');                 if current_user 
+@output_buffer.safe_concat('                <h3 id="post">Make A Post</h3>
+                        ');@output_buffer.append=  form_for :item do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                <div id ="tagform"; class="rounded-corners">
+                                Tag: ');@output_buffer.append= ( f.text_field :tag);@output_buffer.safe_concat('<br />
+                                </div>
+
+                                <div id="postform">
+                                Post: ');@output_buffer.append= ( f.text_field :post);@output_buffer.safe_concat('<br />
+                                ');@output_buffer.append= ( f.submit "Post");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                </div>
+
+');                        end
+                else
+@output_buffer.safe_concat('                        <br>
+                        Please login to post
+                        <br>
+');                end
+@output_buffer.safe_concat('        </div>
+
+        </div>
+
+
+        <div id="midSection">
+
+
+
+
+                <table id="PostIndex"> 
+                  <tr>
+                        <th>Color</th>
+                        <th>Post</th>
+                        <th>Tag</th>
+                        <th>When</th>
+                        <th>Delete</th>
+
+                  </tr>
+
+');                         @items.each do |t| 
+@output_buffer.safe_concat('                                 <tr>
+                                        <td><div class="circle"1></div></td>
+                                        <td>');@output_buffer.append= ( t.post );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( t.tag );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( format_timesince(t.created_at) );@output_buffer.safe_concat('</td>
+                                        <td id="delete_tag">
+                                          ');@output_buffer.append= ( if can_delete(t.created_at) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            ');@output_buffer.append= ( link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                          ');@output_buffer.append= ( else );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            Can\'t delete
+                                          ');@output_buffer.append= ( end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                        </td>
+                                </tr>
+');                         end 
+@output_buffer.safe_concat('                </table>
+        </div>
+</body>');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `module_eval'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `compile'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:244:in `block in compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `synchronize'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:144:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:125:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:143:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:19:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:88:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:167:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:121:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:45:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:203:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:246:in `block in action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/query_cache.rb:64:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:32:in `call_app'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/engine.rb:484:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/application.rb:231:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered items/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (/home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...( if can_delete(t.created_at) );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'):
+    89:                                         <td><%= t.tag %></td>
+    90:                                         <td><%= format_timesince(t.created_at) %></td>
+    91:                                         <td id="delete_tag">
+    92:                                           <%= if can_delete(t.created_at) %>
+    93:                                             <%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
+    94:                                           <%= else %>
+    95:                                             Can't delete
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.14) lib/action_view/template.rb:244:in `block in compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `synchronize'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.14) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.14) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:19:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/builder.rb:49:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.3ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:56:25 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+ERROR: compiling _app_views_items_index_html_erb__2356249964060647348_69993643102320 RAISED /home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...if (can_delete(t.created_at)) );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_items_index_html_erb__2356249964060647348_69993643102320(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "items/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('  <head>
+        <!--testing piviotla-->
+        ');@output_buffer.append= ( stylesheet_link_tag "main.css" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+        <script type="text/javascript">
+                    $(function(){
+                      $(".circle").click(function(){
+                         $(this).css("background", "#58488A");
+                      });
+                    });
+        </script>
+
+         <title>Saw You</title>
+
+    </head>
+<body>
+
+        <div id="HeadBar">
+                        <div id="logo">
+                                <h1>Spotted</h1>
+                                <!--');@output_buffer.append= ( link_to image_tag('Logo.png'));@output_buffer.safe_concat('   uncomment this line to add the logo.png back-->
+                        </div>
+
+                        <div id="filter">
+                        ');@output_buffer.append= form_for items_path, :method => 'get' do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  Filter By');@output_buffer.append= ( text_field :search, "");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  ');@output_buffer.append= ( submit_tag "Search", :name => 'search button');@output_buffer.safe_concat('
+');                         end 
+@output_buffer.safe_concat('                        </div>
+
+                        <div id="user-widget">
+');                           if current_user 
+@output_buffer.safe_concat('                                Welcome <strong>');@output_buffer.append= ( current_user.name );@output_buffer.safe_concat('</strong>!
+                                ');@output_buffer.append= ( link_to "Sign out", signout_path, id: "sign_out" );@output_buffer.safe_concat('
+');                           else 
+@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to image_tag('facebook.png'), id: "facebook_icon");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" );@output_buffer.safe_concat('
+');                           end 
+@output_buffer.safe_concat('                        </div>
+        </div>
+
+
+        <div id="NavMenu">
+                
+                <div id="TagPost">
+');                 if current_user 
+@output_buffer.safe_concat('                <h3 id="post">Make A Post</h3>
+                        ');@output_buffer.append=  form_for :item do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                <div id ="tagform"; class="rounded-corners">
+                                Tag: ');@output_buffer.append= ( f.text_field :tag);@output_buffer.safe_concat('<br />
+                                </div>
+
+                                <div id="postform">
+                                Post: ');@output_buffer.append= ( f.text_field :post);@output_buffer.safe_concat('<br />
+                                ');@output_buffer.append= ( f.submit "Post");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                </div>
+
+');                        end
+                else
+@output_buffer.safe_concat('                        <br>
+                        Please login to post
+                        <br>
+');                end
+@output_buffer.safe_concat('        </div>
+
+        </div>
+
+
+        <div id="midSection">
+
+
+
+
+                <table id="PostIndex"> 
+                  <tr>
+                        <th>Color</th>
+                        <th>Post</th>
+                        <th>Tag</th>
+                        <th>When</th>
+                        <th>Delete</th>
+
+                  </tr>
+
+');                         @items.each do |t| 
+@output_buffer.safe_concat('                                 <tr>
+                                        <td><div class="circle"1></div></td>
+                                        <td>');@output_buffer.append= ( t.post );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( t.tag );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( format_timesince(t.created_at) );@output_buffer.safe_concat('</td>
+                                        <td id="delete_tag">
+                                          ');@output_buffer.append= ( if (can_delete(t.created_at)) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            ');@output_buffer.append= ( link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                          ');@output_buffer.append= ( else );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            Can\'t delete
+                                          ');@output_buffer.append= ( end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                        </td>
+                                </tr>
+');                         end 
+@output_buffer.safe_concat('                </table>
+        </div>
+</body>');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `module_eval'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `compile'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:244:in `block in compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `synchronize'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:144:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:125:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:143:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:19:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:88:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:167:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:121:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:45:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:203:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:246:in `block in action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/query_cache.rb:64:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:32:in `call_app'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/engine.rb:484:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/application.rb:231:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered items/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (/home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...if (can_delete(t.created_at)) );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'):
+    89:                                         <td><%= t.tag %></td>
+    90:                                         <td><%= format_timesince(t.created_at) %></td>
+    91:                                         <td id="delete_tag">
+    92:                                           <%= if (can_delete(t.created_at)) %>
+    93:                                             <%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
+    94:                                           <%= else %>
+    95:                                             Can't delete
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.14) lib/action_view/template.rb:244:in `block in compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `synchronize'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.14) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.14) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:19:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/builder.rb:49:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.3ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:56:43 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" 
+ERROR: compiling _app_views_items_index_html_erb__2356249964060647348_69993606362900 RAISED /home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...( if can_delete(t.created_at) );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'
+Function body:           def _app_views_items_index_html_erb__2356249964060647348_69993606362900(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "items/index";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('  <head>
+        <!--testing piviotla-->
+        ');@output_buffer.append= ( stylesheet_link_tag "main.css" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('        <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+        <script type="text/javascript">
+                    $(function(){
+                      $(".circle").click(function(){
+                         $(this).css("background", "#58488A");
+                      });
+                    });
+        </script>
+
+         <title>Saw You</title>
+
+    </head>
+<body>
+
+        <div id="HeadBar">
+                        <div id="logo">
+                                <h1>Spotted</h1>
+                                <!--');@output_buffer.append= ( link_to image_tag('Logo.png'));@output_buffer.safe_concat('   uncomment this line to add the logo.png back-->
+                        </div>
+
+                        <div id="filter">
+                        ');@output_buffer.append= form_for items_path, :method => 'get' do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  Filter By');@output_buffer.append= ( text_field :search, "");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                  ');@output_buffer.append= ( submit_tag "Search", :name => 'search button');@output_buffer.safe_concat('
+');                         end 
+@output_buffer.safe_concat('                        </div>
+
+                        <div id="user-widget">
+');                           if current_user 
+@output_buffer.safe_concat('                                Welcome <strong>');@output_buffer.append= ( current_user.name );@output_buffer.safe_concat('</strong>!
+                                ');@output_buffer.append= ( link_to "Sign out", signout_path, id: "sign_out" );@output_buffer.safe_concat('
+');                           else 
+@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to image_tag('facebook.png'), id: "facebook_icon");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                ');@output_buffer.append= ( link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" );@output_buffer.safe_concat('
+');                           end 
+@output_buffer.safe_concat('                        </div>
+        </div>
+
+
+        <div id="NavMenu">
+                
+                <div id="TagPost">
+');                 if current_user 
+@output_buffer.safe_concat('                <h3 id="post">Make A Post</h3>
+                        ');@output_buffer.append=  form_for :item do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                <div id ="tagform"; class="rounded-corners">
+                                Tag: ');@output_buffer.append= ( f.text_field :tag);@output_buffer.safe_concat('<br />
+                                </div>
+
+                                <div id="postform">
+                                Post: ');@output_buffer.append= ( f.text_field :post);@output_buffer.safe_concat('<br />
+                                ');@output_buffer.append= ( f.submit "Post");@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                </div>
+
+');                        end
+                else
+@output_buffer.safe_concat('                        <br>
+                        Please login to post
+                        <br>
+');                end
+@output_buffer.safe_concat('        </div>
+
+        </div>
+
+
+        <div id="midSection">
+
+
+
+
+                <table id="PostIndex"> 
+                  <tr>
+                        <th>Color</th>
+                        <th>Post</th>
+                        <th>Tag</th>
+                        <th>When</th>
+                        <th>Delete</th>
+
+                  </tr>
+
+');                         @items.each do |t| 
+@output_buffer.safe_concat('                                 <tr>
+                                        <td><div class="circle"1></div></td>
+                                        <td>');@output_buffer.append= ( t.post );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( t.tag );@output_buffer.safe_concat('</td>
+                                        <td>');@output_buffer.append= ( format_timesince(t.created_at) );@output_buffer.safe_concat('</td>
+                                        <td id="delete_tag">
+                                          ');@output_buffer.append= ( if can_delete(t.created_at) );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            ');@output_buffer.append= ( link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                          ');@output_buffer.append= ( else );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('                                            Can\'t delete
+                                          ');@output_buffer.append= ( end );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+                                        </td>
+                                </tr>
+');                         end 
+@output_buffer.safe_concat('                </table>
+        </div>
+</body>');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `module_eval'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:297:in `compile'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:244:in `block in compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `synchronize'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:232:in `compile!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:144:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:125:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/template.rb:143:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/template_renderer.rb:19:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/streaming.rb:225:in `_render_template'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:88:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:16:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:167:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rescue.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/notifications.rb:123:in `instrument'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/base.rb:121:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/abstract_controller/rendering.rb:45:in `process'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:203:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_controller/metal.rb:246:in `block in action'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:36:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:68:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `each'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/journey-1.0.4/lib/journey/router.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/routing/route_set.rb:608:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:184:in `call!'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/strategy.rb:164:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/omniauth-1.1.4/lib/omniauth/builder.rb:49:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/etag.rb:23:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/conditionalget.rb:25:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/head.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/flash.rb:242:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:210:in `context'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/session/abstract/id.rb:205:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/cookies.rb:341:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/query_cache.rb:64:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activerecord-3.2.14/lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:405:in `__run_callback'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/reloader.rb:65:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:32:in `call_app'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `block in call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/tagged_logging.rb:22:in `tagged'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/logger.rb:16:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/methodoverride.rb:21:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/runtime.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/activesupport-3.2.14/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/lock.rb:15:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/static.rb:63:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/engine.rb:484:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/application.rb:231:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/content_length.rb:14:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/railties-3.2.14/lib/rails/rack/log_tailer.rb:17:in `call'
+/home/jake/.rvm/gems/ruby-2.0.0-p353/gems/rack-1.4.5/lib/rack/handler/webrick.rb:59:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+/home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+  Rendered items/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (/home/jake/projects/spotted/app/views/items/index.html.erb:92: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+...( if can_delete(t.created_at) );@output_buffer.safe_concat('
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:94: syntax error, unexpected keyword_else
+...);@output_buffer.append= ( else );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:96: syntax error, unexpected keyword_end
+...');@output_buffer.append= ( end );@output_buffer.safe_concat...
+...                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:100: syntax error, unexpected keyword_end, expecting ')'
+');                         end 
+                               ^
+/home/jake/projects/spotted/app/views/items/index.html.erb:104: syntax error, unexpected keyword_ensure, expecting ')'
+/home/jake/projects/spotted/app/views/items/index.html.erb:106: syntax error, unexpected keyword_end, expecting ')'):
+    89:                                         <td><%= t.tag %></td>
+    90:                                         <td><%= format_timesince(t.created_at) %></td>
+    91:                                         <td id="delete_tag">
+    92:                                           <%= if can_delete(t.created_at) %>
+    93:                                             <%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
+    94:                                           <%= else %>
+    95:                                             Can't delete
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `module_eval'
+  actionpack (3.2.14) lib/action_view/template.rb:297:in `compile'
+  actionpack (3.2.14) lib/action_view/template.rb:244:in `block in compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `synchronize'
+  actionpack (3.2.14) lib/action_view/template.rb:232:in `compile!'
+  actionpack (3.2.14) lib/action_view/template.rb:144:in `block in render'
+  activesupport (3.2.14) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.14) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:48:in `block (2 levels) in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:47:in `block in render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:55:in `render_with_layout'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:46:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:19:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__2634813867588770843__process_action__3848075897801541323__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:184:in `call!'
+  omniauth (1.1.4) lib/omniauth/strategy.rb:164:in `call'
+  omniauth (1.1.4) lib/omniauth/builder.rb:49:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__1420929041430749000__call__2390735904319567401__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.2ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:57:40 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  Rendered items/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 24ms (Views: 19.7ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-10 21:57:40 -0800
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-10 21:57:40 -0800
+Served asset /facebook.js - 304 Not Modified (22ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-10 21:57:40 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-10 21:57:40 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-10 21:57:40 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-10 21:57:40 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-10 21:57:40 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-10 21:57:40 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:58:14 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 35ms (Views: 16.2ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-10 21:58:14 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-10 21:58:14 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-10 21:58:14 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-10 21:58:14 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-10 21:58:14 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2013-12-10 21:58:29 -0800
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NxIv1+Otkv7HXtta/8Yts1W3gTpAeUgN3wUxT9/C4F0=", "item"=>{"tag"=>"sfu", "post"=>"sfu is pretty gay but not as gay as oc"}, "commit"=>"Post"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("created_at", "post", "tag", "updated_at", "user", "views", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Wed, 11 Dec 2013 05:58:29 UTC +00:00], ["post", "sfu is pretty gay but not as gay as oc"], ["tag", "sfu"], ["updated_at", Wed, 11 Dec 2013 05:58:29 UTC +00:00], ["user", nil], ["views", nil], ["votes", nil]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 6ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:58:29 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-10 21:58:29 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-10 21:58:29 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-10 21:58:29 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-10 21:58:29 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-10 21:58:29 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started DELETE "/items/4" for 127.0.0.1 at 2013-12-10 21:58:34 -0800
+Processing by ItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"NxIv1+Otkv7HXtta/8Yts1W3gTpAeUgN3wUxT9/C4F0=", "id"=>"4"}
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "4"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "items" WHERE "items"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 4ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:58:34 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  Rendered items/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-10 21:58:34 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-10 21:58:34 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-10 21:58:34 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-10 21:58:34 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-10 21:58:34 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-10 21:59:34 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 28ms (Views: 16.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-10 21:59:34 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-10 21:59:34 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-10 21:59:34 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-10 21:59:34 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-10 21:59:34 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)

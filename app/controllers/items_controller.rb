@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 	helper_method :format_timesince
+  helper_method :can_delete
 	def show
 		id = params[:id]
 		@item = Item.find(id)
@@ -39,5 +40,13 @@ class ItemsController < ApplicationController
 		else
 			return (difference/86400).to_i.to_s + " days ago"
 		end
-	end
+  end
+  def can_delete(time)
+    difference = (Time.zone.now- time)
+    if difference<3660
+      return true
+    else
+      return false
+    end
+  end
 end

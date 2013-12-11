@@ -88,7 +88,14 @@
                                         <td><%= t.post %></td>
                                         <td><%= t.tag %></td>
                                         <td><%= format_timesince(t.created_at) %></td>
-                                        <td id="delete_tag"><%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %></td>
+                                        <td id="delete_tag">
+                                          <% if can_delete(t.created_at) %>
+                                            <%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
+                                          <% else %>
+                                            Can't delete
+                                          <% end %>
+
+                                        </td>
                                 </tr>
                         <% end %>
                 </table>
