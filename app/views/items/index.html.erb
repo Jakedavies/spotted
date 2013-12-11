@@ -2,13 +2,13 @@
         <!--testing piviotla-->
         <%= stylesheet_link_tag "main.css" %>
         <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
-    <script type="text/javascript">
-                $(function(){
-                  $(".circle").click(function(){
-                     $(this).css("background", "#58488A");
-                  });
-                });
-    </script>
+        <script type="text/javascript">
+                    $(function(){
+                      $(".circle").click(function(){
+                         $(this).css("background", "#58488A");
+                      });
+                    });
+        </script>
 
          <title>Saw You</title>
 
@@ -58,9 +58,9 @@
 
                         <%end%>
                 <%else%>
-                        <br></br>
+                        <br>
                         Please login to post
-                        <br></br>
+                        <br>
                 <%end%>
         </div>
 
@@ -74,7 +74,7 @@
 
                 <table id="PostIndex"> 
                   <tr>
-                          <th>Color</th>
+                        <th>Color</th>
                         <th>Post</th>
                         <th>Tag</th>
                         <th>When</th>
@@ -84,7 +84,7 @@
 
                         <% @items.each do |t| %>
                                  <tr>
-                                         <td><div class="circle"1></div></td>
+                                        <td><div class="circle"1></div></td>
                                         <td><%= t.post %></td>
                                         <td><%= t.tag %></td>
                                         <td><%= format_timesince(t.created_at) %></td>
