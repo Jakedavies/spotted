@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1487924925">
+    <data-source source="LOCAL" name="Rails spotted: development" uuid="b0e8b0fb-1a33-48f9-87ca-38a487cce35e">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:likealittle_development</jdbc-url>
+      <user-name>lal</user-name>
+      <user-password>dfdedfcfdfd9dfde</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails spotted: test" uuid="b0a5ceb1-8660-4659-906c-4ef7dd9f9f2a">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:likealittle_test</jdbc-url>
+      <user-name>lal</user-name>
+      <user-password>dfdedfcfdfd9dfde</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails spotted: production" uuid="507dc008-b949-4283-8e8b-873546ac5123">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:likealittle_production</jdbc-url>
+      <user-name>lal</user-name>
+      <user-password>dfdedfcfdfd9dfde</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
