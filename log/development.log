@@ -4443,3 +4443,761 @@ Served asset /main.css - 304 Not Modified (0ms)
 
 Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-10 21:59:34 -0800
 Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-14 20:49:16 -0800
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2013-12-14 20:49:16 -0800
+Processing by WelcomeController#index as HTML
+  Rendered welcome/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-14 20:49:17 -0800
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:17 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:17 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:17 -0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/StylesheetLanding.css?body=1" for 127.0.0.1 at 2013-12-14 20:49:17 -0800
+Served asset /StylesheetLanding.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:17 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:17 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-14 20:49:17 -0800
+Served asset /facebook.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/ChatBubble.png" for 127.0.0.1 at 2013-12-14 20:49:17 -0800
+Served asset /ChatBubble.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-14 20:49:17 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-14 20:49:29 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:29 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:29 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:29 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:29 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:29 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-14 20:49:29 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-14 20:49:29 -0800
+Served asset /facebook.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-14 20:49:30 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/items?utf8=%E2%9C%93&search%5B%5D=oc&search+button=Search" for 127.0.0.1 at 2013-12-14 20:49:40 -0800
+Processing by ItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["oc"], "search button"=>"Search"}
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" WHERE "items"."tag" IN ('oc') ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:40 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:40 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:40 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:40 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:40 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-14 20:49:40 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-14 20:49:40 -0800
+Served asset /facebook.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-14 20:49:40 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/items?utf8=%E2%9C%93&search%5B%5D=ubco&search+button=Search" for 127.0.0.1 at 2013-12-14 20:49:44 -0800
+Processing by ItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["ubco"], "search button"=>"Search"}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."tag" IN ('ubco') ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 6.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:44 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:44 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:44 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:44 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:44 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-14 20:49:44 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-14 20:49:44 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-14 20:49:44 -0800
+Served asset /facebook.png - 304 Not Modified (0ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2013-12-14 20:49:58 -0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '539237793' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mUPDATE "users" SET "oauth_token" = 'CAADMAapQIcwBAHvSi0rFfAsgMkorlnqE3xMD6OlAGaOKI5cFwh4Q08612qXfEYdecH7BwjCv6pCtVNiDedSu1dpowABDrgDcfPtFFyzWZCPL1f3TcSnZCwc1pApTnMIgEk1QUuP3ABYhZA7mKi28DHr4x0Fdbs8WTww7IjHY8F2AQCHkZCEBoQDoRmc5cmtcwMhwLQ9F5QZDZD', "oauth_expires_at" = '2013-12-15 06:00:03.000000', "updated_at" = '2013-12-15 04:49:59.281631' WHERE "users"."id" = 1[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-14 20:49:59 -0800
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2013-12-14 20:49:59 -0800
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:59 -0800
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:59 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:59 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:59 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-14 20:49:59 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/StylesheetLanding.css?body=1" for 127.0.0.1 at 2013-12-14 20:49:59 -0800
+Served asset /StylesheetLanding.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ChatBubble.png" for 127.0.0.1 at 2013-12-14 20:49:59 -0800
+Served asset /ChatBubble.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-14 20:49:59 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/item" for 127.0.0.1 at 2013-12-14 20:50:20 -0800
+
+ActionController::RoutingError (No route matches [GET] "/item"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /home/jake/.rvm/rubies/ruby-2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/jake/.rvm/gems/ruby-2.0.0-p353/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-14 20:50:24 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-14 20:50:24 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-14 20:50:24 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-14 20:50:24 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-14 20:50:24 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-14 20:50:24 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-14 20:50:24 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-14 20:50:24 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2013-12-14 20:50:34 -0800
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MGNlOmMveopx3fTYtvR0+3d/ScOCmR6zOW4QBGHdwrg=", "item"=>{"tag"=>"sfu", "post"=>"megan is cute"}, "commit"=>"Post"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "items" ("created_at", "post", "tag", "updated_at", "user", "views", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["created_at", Sun, 15 Dec 2013 04:50:34 UTC +00:00], ["post", "megan is cute"], ["tag", "sfu"], ["updated_at", Sun, 15 Dec 2013 04:50:34 UTC +00:00], ["user", nil], ["views", nil], ["votes", nil]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-14 20:50:34 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-14 20:50:34 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-14 20:50:34 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-14 20:50:34 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-14 20:50:34 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-14 20:50:34 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-14 20:50:34 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-14 20:50:34 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/items?utf8=%E2%9C%93&search%5B%5D=ubco&search+button=Search" for 127.0.0.1 at 2013-12-14 20:51:30 -0800
+Processing by ItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["ubco"], "search button"=>"Search"}
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."tag" IN ('ubco') ORDER BY created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-14 20:51:30 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-14 20:51:30 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-14 20:51:30 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-14 20:51:30 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-14 20:51:30 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-14 20:51:30 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-14 20:51:30 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/items?utf8=%E2%9C%93&search%5B%5D=ubco&search+button=Search" for 127.0.0.1 at 2013-12-15 11:49:33 -0800
+Connecting to database specified by database.yml
+Processing by ItemsController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>["ubco"], "search button"=>"Search"}
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.7ms)[0m  SELECT "items".* FROM "items" WHERE "items"."tag" IN ('ubco') ORDER BY created_at DESC
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 76ms (Views: 51.2ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-15 11:49:34 -0800
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:34 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:34 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:34 -0800
+Served asset /application.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:34 -0800
+Served asset /facebook.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:34 -0800
+Served asset /welcome.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-15 11:49:34 -0800
+Served asset /main.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-15 11:49:34 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 11:49:36 -0800
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2013-12-15 11:49:36 -0800
+Processing by WelcomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered welcome/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:36 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:36 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:36 -0800
+Served asset /facebook.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:36 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:36 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/StylesheetLanding.css?body=1" for 127.0.0.1 at 2013-12-15 11:49:36 -0800
+Served asset /StylesheetLanding.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/ChatBubble.png" for 127.0.0.1 at 2013-12-15 11:49:36 -0800
+Served asset /ChatBubble.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-15 11:49:36 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-15 11:49:40 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  Rendered items/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:40 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:40 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:40 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:40 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-15 11:49:40 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-15 11:49:40 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-15 11:49:40 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+Processing by WelcomeController#index as HTML
+  [1m[35mItem Load (0.7ms)[0m  SELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1
+  Rendered welcome/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 16ms (Views: 5.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+Served asset /facebook.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+Served asset /application.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+Served asset /welcome.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/StylesheetLanding.css?body=1" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+Served asset /StylesheetLanding.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+Served asset /facebook.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/ChatBubble.png" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+Served asset /ChatBubble.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-15 12:01:53 -0800
+Served asset /FontAwesome.otf - 304 Not Modified (0ms)
+
+
+Started GET "/welcome/index?id=cbubble1" for 127.0.0.1 at 2013-12-15 12:01:56 -0800
+Processing by WelcomeController#index as HTML
+  Parameters: {"id"=>"cbubble1"}
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1[0m
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-15 12:01:56 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-15 12:01:56 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-15 12:01:56 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-15 12:01:56 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-15 12:01:56 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-15 12:01:56 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/StylesheetLanding.css?body=1" for 127.0.0.1 at 2013-12-15 12:01:56 -0800
+Served asset /StylesheetLanding.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-15 12:01:56 -0800
+Served asset /facebook.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ChatBubble.png" for 127.0.0.1 at 2013-12-15 12:01:56 -0800
+Served asset /ChatBubble.png - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-15 12:02:02 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  Rendered items/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-15 12:02:02 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:02 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:02 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:02 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:02 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:02 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-15 12:02:02 -0800
+Served asset /main.css - 200 OK (0ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-15 12:02:02 -0800
+Served asset /facebook.png - 304 Not Modified (0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2013-12-15 12:02:10 -0800
+Processing by WelcomeController#index as HTML
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1
+  Rendered welcome/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-15 12:02:10 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:10 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:10 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:10 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:10 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:10 -0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/StylesheetLanding.css?body=1" for 127.0.0.1 at 2013-12-15 12:02:10 -0800
+Served asset /StylesheetLanding.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-15 12:02:10 -0800
+Served asset /facebook.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ChatBubble.png" for 127.0.0.1 at 2013-12-15 12:02:10 -0800
+Served asset /ChatBubble.png - 304 Not Modified (0ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2013-12-15 12:02:39 -0800
+Processing by WelcomeController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1[0m
+  Rendered welcome/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-15 12:02:39 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:39 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:39 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:39 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:39 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-15 12:02:39 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/StylesheetLanding.css?body=1" for 127.0.0.1 at 2013-12-15 12:02:39 -0800
+Served asset /StylesheetLanding.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-15 12:02:39 -0800
+Served asset /facebook.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ChatBubble.png" for 127.0.0.1 at 2013-12-15 12:02:39 -0800
+Served asset /ChatBubble.png - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-15 12:04:50 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  Rendered items/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-15 12:04:50 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-15 12:04:50 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-15 12:04:50 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-15 12:04:50 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-15 12:04:50 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-15 12:04:50 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-15 12:04:50 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-15 12:04:50 -0800
+Served asset /facebook.png - 304 Not Modified (0ms)

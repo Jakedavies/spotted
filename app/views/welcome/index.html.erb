@@ -28,8 +28,14 @@
 
         <%= link_to image_tag('ChatBubble.png'), id:"cbubble1" %>
 
-        <p id="Example_Post">To whoever was wearing the grey hoodie today. Keep that shit up.
-            #Soci-111</p>
+        <!--Updated to dynamically pull the latest post and tag -->
+        <p id="Example_Post">
+          <%= @latest_post.post %>
+          <br>
+          <%= @latest_post.tag %>
+        </p>
+
+
         <div id="paragraph2">"Create a profile. Upload your courses, and see who may have spotted you."</div>
 
     </div>
