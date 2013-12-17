@@ -52,5 +52,17 @@ class ItemsController < ApplicationController
       return false
     end
   end
+  def vote
+    @user = User.find(session[:user_id])
+    @post = Item.find(params[:id])
+    @post.liked_by @user
+    redirect_to items_path
+  end
+  def unvote
+    @user = User.find(session[:user_id])
+    @post = Item.find(params[:id])
+    @post.unliked_by @user
+    redirect_to items_path
+  end
 
 end
