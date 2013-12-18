@@ -16921,3 +16921,82 @@ Served asset /application.js - 304 Not Modified (2ms)
 
 Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:57:18 -0800
 Served asset /main.css - 200 OK (1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 22:36:20 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (26.0ms)
+Completed 500 Internal Server Error in 76ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb__326594400426033387_29187820'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb__326594400426033387_29187820'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.9ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 22:36:22 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 8ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb__326594400426033387_29187820'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb__326594400426033387_29187820'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 22:37:33 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 22:37:33 -0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 22:37:33 -0800
+Served asset /facebook.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 22:37:33 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 22:37:33 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 22:37:33 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 22:37:33 -0800
+Served asset /welcome.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 22:37:33 -0800
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 22:37:33 -0800
+Served asset /main.css - 200 OK (1ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-17 22:37:33 -0800
+Served asset /facebook.png - 304 Not Modified (0ms)

@@ -80,7 +80,7 @@
     </tr>
 
     <% @items.each do |t| %>
-        <tr <% if User.find(session[:user_id]).voted_for? t %> id="colored" <% end %>>
+        <tr <% if  current_user && User.find(session[:user_id]).voted_for?(t) %> id="colored" <% end %>>
           <td><div class="/circle">
             <% if current_user %>
                 <% if !User.find(session[:user_id]).voted_for? t %>
