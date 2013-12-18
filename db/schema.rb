@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(:version => 20131217035911) do
     t.text     "tag"
     t.string   "user"
     t.decimal  "views"
-    t.decimal  "votes"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

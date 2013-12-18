@@ -48,6 +48,7 @@ body{
 }
 #sign_in{
 }
+
 #midSection{
 
   text-align: center;
@@ -104,14 +105,15 @@ body{
   width: 100px;
   height: 25px;
   float: left;
-  padding-left: 10px;
+  padding-left: 15px;
   top: 0px;
 }
+
 #tagform{
   width: 100px;
   float: left;
   height: 25px;
-  padding-left: 10px;
+  padding-left: 0px;
   top: 0px;
 }
 

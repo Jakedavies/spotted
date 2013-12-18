@@ -15387,3 +15387,1537 @@ Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
 
 Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-16 21:30:14 -0800
 Served asset /main.css - 200 OK (2ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (7.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateItems (20131107053033)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (13.3ms)[0m  [1mCREATE TABLE "items" ("id" serial primary key, "post" text, "tag" text, "user" character varying(255), "views" decimal, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131107053033')
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20131127062653)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (10.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "provider" character varying(255), "uid" character varying(255), "name" character varying(255), "oauth_token" character varying(255), "oauth_expires_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131127062653')
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+Migrating to ActsAsVotableMigration (20131217035911)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (11.8ms)[0m  [1mCREATE TABLE "votes" ("id" serial primary key, "votable_id" integer, "votable_type" character varying(255), "voter_id" integer, "voter_type" character varying(255), "vote_flag" boolean, "vote_scope" character varying(255), "vote_weight" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (8.5ms)[0m  CREATE INDEX "index_votes_on_votable_id_and_votable_type" ON "votes" ("votable_id", "votable_type")
+  [1m[36m (4.9ms)[0m  [1mCREATE INDEX "index_votes_on_voter_id_and_voter_type" ON "votes" ("voter_id", "voter_type")[0m
+  [1m[35m (4.9ms)[0m  CREATE INDEX "index_votes_on_voter_id_and_voter_type_and_vote_scope" ON "votes" ("voter_id", "voter_type", "vote_scope")
+  [1m[36m (4.6ms)[0m  [1mCREATE INDEX "index_votes_on_votable_id_and_votable_type_and_vote_scope" ON "votes" ("votable_id", "votable_type", "vote_scope")[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20131217035911')
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-17 21:43:40 -0800
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:43:40 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (7.6ms)
+Compiled application.js  (15ms)  (pid 8992)
+Completed 200 OK in 130ms (Views: 61.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:43:40 -0800
+Served asset /application.css - 200 OK (3ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:43:40 -0800
+Served asset /facebook.js - 200 OK (3ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:43:40 -0800
+Served asset /log_in_to_vote.js - 200 OK (4ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:43:40 -0800
+Served asset /welcome.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:43:40 -0800
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:43:40 -0800
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:43:40 -0800
+Served asset /application.js - 200 OK (36ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:43:40 -0800
+Served asset /main.css - 200 OK (5ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-17 21:43:41 -0800
+Served asset /facebook.png - 200 OK (3ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-17 21:43:41 -0800
+Served asset /FontAwesome.otf - 200 OK (2ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:06 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:06 -0800
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:06 -0800
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:06 -0800
+Served asset /log_in_to_vote.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:06 -0800
+Served asset /application.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:06 -0800
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:06 -0800
+Served asset /welcome.js - 200 OK (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:06 -0800
+Served asset /facebook.js - 200 OK (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:06 -0800
+Served asset /main.css - 200 OK (0ms)
+
+
+Started GET "/assets/facebook.png" for 127.0.0.1 at 2013-12-17 21:44:06 -0800
+Served asset /facebook.png - 200 OK (0ms)
+
+
+Started GET "/assets/FontAwesome.otf" for 127.0.0.1 at 2013-12-17 21:44:06 -0800
+Served asset /FontAwesome.otf - 200 OK (0ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2013-12-17 21:44:09 -0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '777863901' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (6.9ms)[0m  [1mINSERT INTO "users" ("created_at", "name", "oauth_expires_at", "oauth_token", "provider", "uid", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Wed, 18 Dec 2013 05:44:10 UTC +00:00], ["name", "Nolan Koriath"], ["oauth_expires_at", Wed, 18 Dec 2013 07:00:00 UTC +00:00], ["oauth_token", "CAADMAapQIcwBAPuiIpItQR2BjlY8loK3seXy6D60OUKR5ZC47InqpZCBZAOBQzDVHzYdBMs3oGCLEpk833ltbbl3wkcpo9FXtvAr4HZAhgXIkqglf9pj8FAZCcBxmpPnU9VubD3LApMBt1xOh6IGE9o3SWJgZCPcOO7DibiAgymxvISEpS0YZCb3FZBXkZAKplDZBuTD5X0ZBbIsQZDZD"], ["provider", "facebook"], ["uid", "777863901"], ["updated_at", Wed, 18 Dec 2013 05:44:10 UTC +00:00]]
+  [1m[35m (2.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 51ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-17 21:44:10 -0800
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:10 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  Rendered items/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 21ms (Views: 17.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:10 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:10 -0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:10 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:10 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:10 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:10 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:10 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:10 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2013-12-17 21:44:26 -0800
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "item"=>{"tag"=>"ubco", "post"=>"asdkjaslk"}, "commit"=>"Post"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "items" ("created_at", "post", "tag", "updated_at", "user", "views") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", Wed, 18 Dec 2013 05:44:26 UTC +00:00], ["post", "asdkjaslk"], ["tag", "ubco"], ["updated_at", Wed, 18 Dec 2013 05:44:26 UTC +00:00], ["user", 1], ["views", nil]]
+  [1m[35m (2.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 11ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:26 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.7ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  Rendered items/index.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 54ms (Views: 46.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:26 -0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:26 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:26 -0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:26 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:26 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:26 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:26 -0800
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:26 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/vote" for 127.0.0.1 at 2013-12-17 21:44:30 -0800
+Processing by ItemsController#vote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Color", "id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.8ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type", "vote_flag", "vote_scope", "vote_weight", "voter_id", "voter_type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", Wed, 18 Dec 2013 05:44:30 UTC +00:00], ["updated_at", Wed, 18 Dec 2013 05:44:30 UTC +00:00], ["votable_id", 1], ["votable_type", "Item"], ["vote_flag", true], ["vote_scope", nil], ["vote_weight", 0], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 57ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:30 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  Rendered items/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:30 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:30 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:30 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:30 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:30 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:30 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:30 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:30 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/unvote" for 127.0.0.1 at 2013-12-17 21:44:33 -0800
+Processing by ItemsController#unvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Uncolor", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'[0m
+  [1m[35mActsAsVotable::Vote Load (0.3ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = $1  [["id", 1]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item'
+Redirected to http://localhost:3000/items
+Completed 302 Found in 10ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:33 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  Rendered items/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:33 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:33 -0800
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:33 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:33 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:33 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:33 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:33 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:33 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/vote" for 127.0.0.1 at 2013-12-17 21:44:34 -0800
+Processing by ItemsController#vote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Color", "id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type", "vote_flag", "vote_scope", "vote_weight", "voter_id", "voter_type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", Wed, 18 Dec 2013 05:44:34 UTC +00:00], ["updated_at", Wed, 18 Dec 2013 05:44:34 UTC +00:00], ["votable_id", 1], ["votable_type", "Item"], ["vote_flag", true], ["vote_scope", nil], ["vote_weight", 0], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[36m (2.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 11ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:34 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  Rendered items/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:34 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:34 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:34 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:34 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:34 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:34 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:34 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:34 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/unvote" for 127.0.0.1 at 2013-12-17 21:44:41 -0800
+Processing by ItemsController#unvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Uncolor", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'[0m
+  [1m[35mActsAsVotable::Vote Load (0.5ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = $1  [["id", 2]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item'
+Redirected to http://localhost:3000/items
+Completed 302 Found in 9ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:42 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  Rendered items/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:42 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:42 -0800
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:42 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:42 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:42 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:42 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:42 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:42 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/vote" for 127.0.0.1 at 2013-12-17 21:44:42 -0800
+Processing by ItemsController#vote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Color", "id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type", "vote_flag", "vote_scope", "vote_weight", "voter_id", "voter_type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", Wed, 18 Dec 2013 05:44:42 UTC +00:00], ["updated_at", Wed, 18 Dec 2013 05:44:42 UTC +00:00], ["votable_id", 1], ["votable_type", "Item"], ["vote_flag", true], ["vote_scope", nil], ["vote_weight", 0], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 10ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:42 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  Rendered items/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:43 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:43 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:43 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:43 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:43 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:43 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:43 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:43 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/unvote" for 127.0.0.1 at 2013-12-17 21:44:43 -0800
+Processing by ItemsController#unvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Uncolor", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'[0m
+  [1m[35mActsAsVotable::Vote Load (0.6ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = $1  [["id", 3]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item'
+Redirected to http://localhost:3000/items
+Completed 302 Found in 10ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:43 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  Rendered items/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/vote" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Processing by ItemsController#vote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Color", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type", "vote_flag", "vote_scope", "vote_weight", "voter_id", "voter_type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", Wed, 18 Dec 2013 05:44:44 UTC +00:00], ["updated_at", Wed, 18 Dec 2013 05:44:44 UTC +00:00], ["votable_id", 1], ["votable_type", "Item"], ["vote_flag", true], ["vote_scope", nil], ["vote_weight", 0], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 12ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  Rendered items/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:44 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/unvote" for 127.0.0.1 at 2013-12-17 21:44:45 -0800
+Processing by ItemsController#unvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Uncolor", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'[0m
+  [1m[35mActsAsVotable::Vote Load (0.3ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = $1  [["id", 4]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item'
+Redirected to http://localhost:3000/items
+Completed 302 Found in 13ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:45 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  Rendered items/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:45 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:45 -0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:45 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:45 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:45 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:45 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:45 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:45 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/vote" for 127.0.0.1 at 2013-12-17 21:44:46 -0800
+Processing by ItemsController#vote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Color", "id"=>"1"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type", "vote_flag", "vote_scope", "vote_weight", "voter_id", "voter_type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", Wed, 18 Dec 2013 05:44:46 UTC +00:00], ["updated_at", Wed, 18 Dec 2013 05:44:46 UTC +00:00], ["votable_id", 1], ["votable_type", "Item"], ["vote_flag", true], ["vote_scope", nil], ["vote_weight", 0], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[36m (7.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 15ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:46 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  Rendered items/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:46 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:46 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:46 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:46 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:46 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:46 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:46 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:46 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/unvote" for 127.0.0.1 at 2013-12-17 21:44:47 -0800
+Processing by ItemsController#unvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Uncolor", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'[0m
+  [1m[35mActsAsVotable::Vote Load (0.3ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = $1  [["id", 5]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item'
+Redirected to http://localhost:3000/items
+Completed 302 Found in 8ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:47 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  Rendered items/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:47 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:47 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:47 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:47 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:47 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:47 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:47 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:47 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/vote" for 127.0.0.1 at 2013-12-17 21:44:50 -0800
+Processing by ItemsController#vote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Color", "id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type", "vote_flag", "vote_scope", "vote_weight", "voter_id", "voter_type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", Wed, 18 Dec 2013 05:44:50 UTC +00:00], ["updated_at", Wed, 18 Dec 2013 05:44:50 UTC +00:00], ["votable_id", 1], ["votable_type", "Item"], ["vote_flag", true], ["vote_scope", nil], ["vote_weight", 0], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[36m (5.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 13ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:50 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  Rendered items/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 21ms (Views: 17.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:50 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:50 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:50 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:50 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:50 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:50 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:44:50 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:44:50 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/signout" for 127.0.0.1 at 2013-12-17 21:44:52 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-17 21:44:52 -0800
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:52 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (19.1ms)
+Completed 500 Internal Server Error in 24ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:58 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 12ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.5ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:44:59 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (25.2ms)
+Completed 500 Internal Server Error in 27ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (4.8ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:45:00 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 7ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:45:02 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 5ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.9ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:45:04 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 9ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.2ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:50:35 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 6ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.7ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:50:36 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 6ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:50:37 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 7ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:50:38 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 6ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:50:39 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 6ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.3ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:50:39 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  Rendered items/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 6ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/views/items/index.html.erb:83:in `block in _app_views_items_index_html_erb___843387253344608861_13546880'
+  app/views/items/index.html.erb:82:in `_app_views_items_index_html_erb___843387253344608861_13546880'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.4ms)
+
+
+Started GET "/weclome/index" for 127.0.0.1 at 2013-12-17 21:50:59 -0800
+
+ActionController::RoutingError (No route matches [GET] "/weclome/index"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/welcome/index" for 127.0.0.1 at 2013-12-17 21:51:04 -0800
+Processing by WelcomeController#index as HTML
+  [1m[36mItem Load (1.5ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1[0m
+  Rendered welcome/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 20ms (Views: 16.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:51:04 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:04 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:04 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:04 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:04 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:04 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:04 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/StylesheetLanding.css?body=1" for 127.0.0.1 at 2013-12-17 21:51:04 -0800
+Served asset /StylesheetLanding.css - 200 OK (1ms)
+
+
+Started GET "/assets/ChatBubble.png" for 127.0.0.1 at 2013-12-17 21:51:04 -0800
+Served asset /ChatBubble.png - 200 OK (2ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2013-12-17 21:51:08 -0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '777863901' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE "users" SET "oauth_token" = 'CAADMAapQIcwBAIqMxDbsdYwAkcYYVDpvRAfjoXoFH8PedTXk091PURQoU8ffNt4fBb0zTWDxqKg0vKlMX64z25Q3fnONwvLuoKnJrnb79JUCYZCL8toWpBVZCkYEgnZAaaFhSpohQuWAP4JMIVOzHH5dlFTlUQ7uSKVflttcsIdtIp5WVr962VbBY15G9ITHVZAebIfGdwZDZD', "updated_at" = '2013-12-18 05:51:09.161584' WHERE "users"."id" = 1
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-17 21:51:09 -0800
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:51:09 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  Rendered items/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 26ms (Views: 22.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:51:09 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:09 -0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:09 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:09 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:09 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:09 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:09 -0800
+Served asset /application.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:51:09 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/unvote" for 127.0.0.1 at 2013-12-17 21:51:13 -0800
+Processing by ItemsController#unvote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Uncolor", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.1ms)[0m  SELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1  [["id", "1"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'[0m
+  [1m[35mActsAsVotable::Vote Load (0.4ms)[0m  SELECT "votes".* FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "votes" WHERE "votes"."id" = $1  [["id", 6]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item'
+Redirected to http://localhost:3000/items
+Completed 302 Found in 11ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:51:13 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  Rendered items/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:51:13 -0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:13 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:13 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:13 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:13 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:13 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:13 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:51:13 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items/1/vote" for 127.0.0.1 at 2013-12-17 21:51:16 -0800
+Processing by ItemsController#vote as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"THbc0MpovQU/e3jO/+ktTmtLoUImoq2zsrUty1Y8Kvo=", "commit"=>"Color", "id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."voter_id" = 1 AND "votes"."vote_scope" IS NULL AND "votes"."voter_type" = 'User'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "votes" ("created_at", "updated_at", "votable_id", "votable_type", "vote_flag", "vote_scope", "vote_weight", "voter_id", "voter_type") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["created_at", Wed, 18 Dec 2013 05:51:16 UTC +00:00], ["updated_at", Wed, 18 Dec 2013 05:51:16 UTC +00:00], ["votable_id", 1], ["votable_type", "Item"], ["vote_flag", true], ["vote_scope", nil], ["vote_weight", 0], ["voter_id", 1], ["voter_type", "User"]]
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/items
+Completed 302 Found in 9ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:51:16 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  Rendered items/index.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:51:16 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:16 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:16 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:16 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:16 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:16 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:51:16 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:51:16 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:56:03 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items" [0m
+Compiled main.css  (0ms)  (pid 8992)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  Rendered items/index.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 30ms (Views: 26.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:56:03 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:03 -0800
+Served asset /jquery.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:03 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:03 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:03 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:03 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:03 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:56:03 -0800
+Served asset /main.css - 200 OK (1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:56:04 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  Rendered items/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:56:04 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:04 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:04 -0800
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:04 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:04 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:04 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:04 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:56:04 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:56:51 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" [0m
+Compiled main.css  (0ms)  (pid 8992)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  Rendered items/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:56:51 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:51 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:51 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:51 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:51 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:51 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:56:51 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:56:51 -0800
+Served asset /main.css - 200 OK (1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-17 21:57:18 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" 
+Compiled main.css  (0ms)  (pid 8992)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  Rendered items/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-17 21:57:18 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-17 21:57:18 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-17 21:57:18 -0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-17 21:57:18 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-17 21:57:18 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-17 21:57:18 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-17 21:57:18 -0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-17 21:57:18 -0800
+Served asset /main.css - 200 OK (1ms)
