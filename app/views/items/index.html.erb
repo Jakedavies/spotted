@@ -14,6 +14,8 @@
 
 </head>
 <body>
+
+
 	
 	<div id="Head_Bar">
 
@@ -23,16 +25,22 @@
 		
        <% if current_user %>
 
-      
-
-	   			 Welcome <strong> <%= current_user.name %> </strong>!
-           
+          <div id ="Logged_In">
+	   			   Welcome <strong> <%= current_user.name %> </strong>!   
         	<%= link_to "Sign out", signout_path, id: "sign_out" %>
+          </div>
+          
     		<% else %>
           
-           <div id="Login_Button">
-        	<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  		    </div>
+          <div id="Login_Button_Container"> 
+            
+            <div id="Login_Button">
+
+        	 <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+
+  		      </div>
+
+        </div>
 
         <% end %>	
   </div>

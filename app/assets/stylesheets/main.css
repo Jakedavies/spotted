@@ -6,57 +6,96 @@ html{
 }
 
 body{
-	background-color: LightGrey;
+	background-image:url('dots.png');
 	
 }
 
 #Facebook_Login{
 	float: right;
 	padding-right: 10%;
+
 }
+
+
+#Logged_In{
+	color: #60c5ea;
+	width: 400px;
+	height: 20px;
+	position: fixed;
+	top: 3%;
+	right: 1%;
+}
+
 #Logo{
-	float: left;
-	padding-left: 15%;
-	font-size: 30px;
-	 text-shadow: black 0.01em 0.01em 0.02em;
+	width: 10%;
+	margin-top: 1%;
+	margin-left: 10%;
+	margin-bottom: auto;
 }
+
 #Logo:hover{
-	float: left;
-	padding-left: 15%;
-	font-size: 30px;
-	text-shadow: black 0.01em 0.01em 0.02em;
+	margin-top: 1%;
+	margin-left: 10%;
+	margin-bottom: auto;
+	font-color:  red ;
 	color: #60c5ea;
 }
 
 
-#Login_Button{
-	color: black;
-	height: 5%;
-	font-size: 12px;
-	font-color: black;
-	background-color: white;
-	border: black;
-	border-width: 5px;
-	padding-top: 25%;
+
+#Login_Button_Container{
+	width: 200px;
+	height: 20px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	border-radius: 10px;
+	position: fixed;
+	top: 3%;
+	right: 2%;
 }
-#Login_Button:hover{
-	height: 5%;
-	font-size: 12px;
-	font-color: black;
-	background-color: white;
-	border: black;
-	border-width: 5px;
-	padding-top: 25%;
+
+#Login_Button{
+	font-size: 15px;
+	margin-left: 8%; 
+}
+
+
+
+
+
+/*
+CSS For Links.
+*/
+a:link {
+COLOR: black;
+}
+a:visited {
+COLOR: black;
+}
+a:hover {
+COLOR: #60c5ea;
 }
 
 
 #Head_Bar{
 	background-color: white;
 	width: 100%;
-	height: 10%;
+	height: 8%;
 	position: fixed;
     top: 0px;
     left: 0px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    border-left: 0px;
+    border-right:0px;
+    border-top:0px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius:  10px;
+    box-shadow: 10px 10px 5px #888888;
+    z-index: 2;
+
 }
 
 }
