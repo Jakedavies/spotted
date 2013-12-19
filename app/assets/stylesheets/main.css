@@ -1,7 +1,9 @@
-@font-face { font-family: Awesome; src: url('FontAwesome.otf'); } 
+@font-face { font-family: Awesome; src: url('fonts/FontAwesome.otf'), format('truetype'); } 
+@font-face { font-family: 2Dumb; src: url('fonts/2Dumb.ttf'), format('truetype'); } 
+
 
 html{
-  font-family: "Awesome"
+  font-family: "Awesome";
   overflow: auto;
 }
 
@@ -12,6 +14,16 @@ body{
 #Facebook_Login{
 	float: right;
 	padding-right: 10%;
+}
+
+#PostQ{
+	
+	font-family: 2Dumb;
+	font-size: 30px;
+	position: fixed;
+	bottom: -15px;
+	z-index: 2;
+	right: 37%;
 }
 
 
@@ -57,27 +69,27 @@ body{
 #Post1{
 	float:left;
 	padding-top: 5%;
-	padding-left: 10%;
+	padding-left: 4%;
 	position: static;
 }
 
 #Post2{
 	float:right;
 	padding-top: 15%;
-	padding-right: 10%;
+	padding-right: 4%;
 	position: static;
 }
 
 #Post3{
 	float:left;
 	padding-top: 5%;
-	padding-left: 10%;
+	padding-left: 4%;
 	position: static;
 }
 #Post4{
 	float:right;
 	padding-top: 5%;
-	padding-right: 10%;
+	padding-right: 4%;
 	position: static;
 }
 
