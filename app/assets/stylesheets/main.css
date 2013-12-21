@@ -60,37 +60,84 @@ body{
 }
 
 #Post_Section{
-	margin-top: 1px;
+	margin-top: 100px;
 	float: below;
 	height: 1000px;
+	padding-left: 10%;
 
 
 }
+
 #Post1{
+	margin-top: 15px;
+	width: 80%;
+	padding-left: 10%;
+	height: 15%;
+	background-color:  White;
 	float:left;
-	padding-top: 5%;
-	padding-left: 4%;
+	padding-top: 1%;
+	padding-left: 1%;
 	position: static;
+	z-index: 2;
+	border-style: solid;
+	border-width: 0.3px;
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #888888;
+
 }
 
 #Post2{
-	float:right;
-	padding-top: 15%;
-	padding-right: 4%;
+	margin-top: 15px;
+	width: 80%;
+	padding-left: 10%;
+	height: 15%;
+	background-color: white;
+	float:left;
+	padding-top: 1%;
+	padding-left: 1%;
 	position: static;
+	z-index: 2;
+	border-style: solid;
+	border-width: 0.3px;
+	border-radius: 10px;
+		border-width: 0.3px;
+
+	box-shadow: 10px 10px 5px #888888;
 }
 
 #Post3{
+	margin-top: 15px;
+	width: 80%;
+	padding-left: 10%;
+	height: 15%;
+	background-color: white;
 	float:left;
-	padding-top: 5%;
-	padding-left: 4%;
+	padding-top: 1%;
+	padding-left: 1%;
 	position: static;
+	z-index: 2;
+	border-style: solid;
+	border-radius: 10px;
+		border-width: 0.3px;
+
+	box-shadow: 10px 10px 5px #888888;
 }
 #Post4{
-	float:right;
-	padding-top: 5%;
-	padding-right: 4%;
+	margin-top: 15px;
+	width: 80%;
+	padding-left: 10%;
+	height: 15%;
+	background-color: white;
+	float:left;
+	padding-top: 1%;
+	padding-left: 1%;
 	position: static;
+	z-index: 2;
+	border-style: solid;
+	border-width: 0.3px;
+
+	border-radius: 10px;
+	box-shadow: 10px 10px 5px #888888;
 }
 
 
@@ -157,7 +204,7 @@ COLOR: #60c5ea;
 #Head_Bar{
 	background-color: white;
 	width: 100%;
-	height: 8%;
+	height: 80px;
 	position: fixed;
     top: 0px;
     left: 0px;
@@ -170,9 +217,10 @@ COLOR: #60c5ea;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius:  10px;
     box-shadow: 10px 10px 5px #888888;
-    z-index: 2;
-
+    z-index: 3;
 }
+
+
 
 }
 
