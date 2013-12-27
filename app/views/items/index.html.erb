@@ -53,26 +53,46 @@
 </div>
 
 <div id="Post_Bar">
+  <% if current_user %>
+        <h3 id="post">Make A Post</h3>
+        <%= form_for :item do |f| %>
 
+            <div id ="tagform"; class="rounded-corners">
+            Tag: <%= f.text_field :tag%><br />
+            </div>
+
+            <div id="postform">
+              Post: <%= f.text_field :post%><br />
+              <%= f.submit "Post"%>
+            </div>
+
+        <%end%>
+    <%else%>
+        <br>
+        Please login to post
+        <br>
+    <%end%>
+    </div>
 </div>
 
 <div id="Post_Section">
-
-  <div id="Post1" class="shadow">
- 
-  </div>
-
-  <div id="Post2">
-    
-  </div>
-
-   <div id="Post3">
-
-  </div>
-
-  <div id="Post4">
- 
-  </div>
+  <% @items.each do |t| %>
+    <div id="Post1" class="shadow">
+      <table>
+        <tr>
+          <td> vote_button_here </td>
+          <td><%= '#' +t.tag %></td>
+          <td><%= t.post %></td>
+          <td><%= format_timesince(t.created_at) %></td>
+          <td id="delete_tag">
+            <% if can_delete(t.created_at,t.user.to_i) %>
+                <%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  <% end %>
 
 </div>
 

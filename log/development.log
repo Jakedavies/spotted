@@ -38957,3 +38957,419 @@ Served asset /main.css - 200 OK (1ms)
 
 Started GET "/assets/dots.png" for 127.0.0.1 at 2013-12-20 19:00:19 -0800
 Served asset /dots.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-27 09:58:40 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.6ms)[0m  [1mSELECT "items".* FROM "items" [0m
+  Rendered items/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 112ms (Views: 54.2ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-27 09:58:40 -0800
+Served asset /application.css - 200 OK (8ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:40 -0800
+Served asset /jquery.js - 200 OK (21ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:40 -0800
+Served asset /log_in_to_vote.js - 200 OK (4ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:40 -0800
+Served asset /welcome.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:40 -0800
+Served asset /jquery_ujs.js - 200 OK (1ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:40 -0800
+Served asset /facebook.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:40 -0800
+Served asset /application.js - 200 OK (5ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-27 09:58:40 -0800
+Served asset /main.css - 200 OK (1ms)
+
+
+Started GET "/assets/dots.png" for 127.0.0.1 at 2013-12-27 09:58:40 -0800
+Served asset /dots.png - 200 OK (1ms)
+
+
+Started GET "/auth/facebook/callback" for 127.0.0.1 at 2013-12-27 09:58:50 -0800
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"provider"=>"facebook"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."provider" = 'facebook' AND "users"."uid" = '539237793' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  UPDATE "users" SET "oauth_token" = 'CAADMAapQIcwBAMY8VsFAeWTF9aIbqs0NrvPfZAzGaZCmfvDeMHICqXDBdYTKeGFfr115jQySEH7mwc6eWej6xyLBHFMn9bgVwJUsCJE2lZBVZBV09FGEHABeeIl2bxhYBviFw3m2SbWswc9NZBUItgZCrIdM3UsEWZCpZBBAjQ1zk4kbfxQhZBNFP4ZBU99676cudIEo5RmgvzmAZDZD', "oauth_expires_at" = '2013-12-27 19:00:00.000000', "updated_at" = '2013-12-27 17:58:51.239706' WHERE "users"."id" = 1
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 59ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-27 09:58:51 -0800
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-27 09:58:51 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" 
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered items/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:51 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-27 09:58:51 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:51 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:51 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:51 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:51 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-27 09:58:51 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-27 09:58:51 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-27 10:06:02 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (1.7ms)[0m  SELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.7ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC LIMIT 5
+  Rendered items/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 41ms (Views: 18.2ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-27 10:06:02 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:02 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:02 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:02 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:02 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:02 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:02 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-27 10:06:02 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-27 10:06:42 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC LIMIT 5[0m
+  Rendered items/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-27 10:06:42 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:42 -0800
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:42 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:42 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:42 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:42 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-27 10:06:42 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-27 10:06:42 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-27 10:07:47 -0800
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" ORDER BY created_at DESC LIMIT 5
+  Rendered items/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 30ms (Views: 27.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-27 10:07:47 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-27 10:07:47 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-27 10:07:47 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-27 10:07:47 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-27 10:07:47 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-27 10:07:47 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-27 10:07:47 -0800
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-27 10:07:47 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-27 10:08:33 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC LIMIT 5[0m
+  Rendered items/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-27 10:08:33 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:33 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:33 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:33 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:33 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:33 -0800
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:33 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-27 10:08:33 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2013-12-27 10:08:45 -0800
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w7u3hoDTxQ3Gyxt7xmEx+AlAHwg9qdUjzAw+1Aug9oE=", "item"=>{"tag"=>"nnew", "post"=>"work"}, "commit"=>"Post"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "items" ("created_at", "post", "tag", "updated_at", "user", "views", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Fri, 27 Dec 2013 18:08:45 UTC +00:00], ["post", "work"], ["tag", "nnew"], ["updated_at", Fri, 27 Dec 2013 18:08:45 UTC +00:00], ["user", 1], ["views", nil], ["votes", nil]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 5ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-27 10:08:45 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC LIMIT 5[0m
+  Rendered items/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-27 10:08:46 -0800
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:46 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:46 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:46 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:46 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:46 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-27 10:08:46 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-27 10:08:46 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2013-12-27 10:09:34 -0800
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w7u3hoDTxQ3Gyxt7xmEx+AlAHwg9qdUjzAw+1Aug9oE=", "item"=>{"tag"=>"th", "post"=>""}, "commit"=>"Post"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("created_at", "post", "tag", "updated_at", "user", "views", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Fri, 27 Dec 2013 18:09:34 UTC +00:00], ["post", ""], ["tag", "th"], ["updated_at", Fri, 27 Dec 2013 18:09:34 UTC +00:00], ["user", 1], ["views", nil], ["votes", nil]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 4ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-27 10:09:34 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC LIMIT 5[0m
+  Rendered items/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-27 10:09:34 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:34 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:34 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:34 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:34 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:34 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:34 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-27 10:09:34 -0800
+Served asset /main.css - 304 Not Modified (0ms)
+
+
+Started POST "/items" for 127.0.0.1 at 2013-12-27 10:09:39 -0800
+Processing by ItemsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w7u3hoDTxQ3Gyxt7xmEx+AlAHwg9qdUjzAw+1Aug9oE=", "item"=>{"tag"=>"fghf", "post"=>""}, "commit"=>"Post"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("created_at", "post", "tag", "updated_at", "user", "views", "votes") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", Fri, 27 Dec 2013 18:09:39 UTC +00:00], ["post", ""], ["tag", "fghf"], ["updated_at", Fri, 27 Dec 2013 18:09:39 UTC +00:00], ["user", 1], ["views", nil], ["votes", nil]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/items
+Completed 302 Found in 4ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-27 10:09:39 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC LIMIT 5[0m
+  Rendered items/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-27 10:09:39 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:39 -0800
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:39 -0800
+Served asset /facebook.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:39 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:39 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:39 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-27 10:09:39 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-27 10:09:39 -0800
+Served asset /main.css - 304 Not Modified (0ms)
