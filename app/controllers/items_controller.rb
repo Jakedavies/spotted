@@ -7,11 +7,11 @@ class ItemsController < ApplicationController
   end
   def index
     @filter_message= params[:search]
-    @items = Item.last()
+    @items = Item.all
     if params[:search]!=nil&&params[:search]!=""
-      @items = Item.order('created_at DESC').find_all_by_tag(params[:search]).limit(5)
+      @items = Item.order('created_at DESC').paginate(:page => params[:page])
     else
-      @items = Item.order('created_at DESC').limit(5)
+      @items = Item.order('created_at DESC').paginate(:page => params[:page])
     end
   end
 
