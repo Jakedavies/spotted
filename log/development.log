@@ -42708,3 +42708,108 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-28 16:04:33 -0800
 Served asset /main.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-28 16:05:26 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.9ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (2.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (0.9ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC LIMIT 5[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (1.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 3 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 3 AND "votes"."votable_type" = 'Item'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 2 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 2 AND "votes"."votable_type" = 'Item'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item'
+  Rendered items/index.html.erb within layouts/application (68.9ms)
+Completed 200 OK in 114ms (Views: 80.5ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-28 16:05:26 -0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-28 16:05:26 -0800
+Served asset /jquery.js - 304 Not Modified (20ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-28 16:05:26 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-28 16:05:26 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-28 16:05:26 -0800
+Served asset /facebook.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-28 16:05:26 -0800
+Served asset /welcome.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-28 16:05:26 -0800
+Served asset /application.js - 304 Not Modified (29ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-28 16:05:26 -0800
+Served asset /main.css - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-12-28 16:14:33 -0800
+
+
+Started GET "/items" for 127.0.0.1 at 2013-12-28 16:14:33 -0800
+Processing by ItemsController#index as HTML
+  [1m[36mItem Load (0.9ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY "items"."id" DESC LIMIT 1[0m
+  [1m[35mUser Load (2.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mItem Load (1.0ms)[0m  [1mSELECT "items".* FROM "items" ORDER BY created_at DESC LIMIT 5[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 3 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 3 AND "votes"."votable_type" = 'Item'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 2 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 2 AND "votes"."votable_type" = 'Item'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = 1 AND "votes"."voter_type" = 'User' AND "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item' AND "votes"."vote_scope" IS NULL[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."votable_id" = 1 AND "votes"."votable_type" = 'Item'
+  Rendered items/index.html.erb within layouts/application (66.6ms)
+Completed 200 OK in 111ms (Views: 70.9ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-12-28 16:14:33 -0800
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/facebook.js?body=1" for 127.0.0.1 at 2013-12-28 16:14:33 -0800
+Served asset /facebook.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-12-28 16:14:33 -0800
+Served asset /jquery.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-12-28 16:14:33 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/log_in_to_vote.js?body=1" for 127.0.0.1 at 2013-12-28 16:14:33 -0800
+Served asset /log_in_to_vote.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-12-28 16:14:33 -0800
+Served asset /application.js - 304 Not Modified (28ms)
+
+
+Started GET "/assets/welcome.js?body=1" for 127.0.0.1 at 2013-12-28 16:14:33 -0800
+Served asset /welcome.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/main.css?body=1" for 127.0.0.1 at 2013-12-28 16:14:33 -0800
+Served asset /main.css - 304 Not Modified (4ms)
