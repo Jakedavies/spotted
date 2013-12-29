@@ -6,12 +6,21 @@ class ItemsController < ApplicationController
     @item = Item.find(id)
   end
   def index
+    #sort kind of works, no direction toggle yet. Also need to add param to session hash
+    if(params[:sort]==nil)
+      @sort = 'created_at'
+    else
+      @sort = params[:sort]
+    end
+
     @filter_message= params[:search]
     @items = Item.all
     if params[:search]!=nil&&params[:search]!=""
-      @items = Item.order('created_at DESC').paginate(:page => params[:page])
+      #@items = Item.order('created_at DESC').paginate(:page => params[:page])
+      @items = Item.order(@sort+ ' desc').paginate(:page => params[:page])
     else
-      @items = Item.order('created_at DESC').paginate(:page => params[:page])
+      #@items = Item.order('created_at DESC').paginate(:page => params[:page])
+      @items = Item.order(@sort+ ' asc').paginate(:page => params[:page])
     end
   end
 
