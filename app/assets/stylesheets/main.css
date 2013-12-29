@@ -219,8 +219,9 @@ COLOR: #60c5ea;
     box-shadow: 10px 10px 5px #888888;
     z-index: 3;
 }
-
-
+td{
+	border: 1px solid black;
+}
 
 }
 

@@ -80,7 +80,22 @@
     <div id="Post1" class="shadow">
       <table>
         <tr>
-          <td> vote_button_here </td>
+          <td> 
+            <% if current_user %>
+                <% if !User.find(session[:user_id]).voted_for? t %>
+                    <%= form_for( t, :url => vote_item_path(:id => t.id), :html => { :method => :post } ) do |f| %>
+                        <%= f.submit "Color" %>
+                    <% end %>
+                <% else %>
+                    <%= form_for( t, :url => unvote_item_path(:id => t.id), :html => { :method => :post } ) do |f| %>
+                        <%= f.submit "Uncolor" %>
+                    <% end %>
+                <% end %>
+            <% else %>
+                <%= button_to "Color", log_in_to_vote_index_path, :method => :get %>
+            <% end %>
+          </td>
+          <td> Total Votes: <%= t.votes.size %> </td>
           <td><%= '#' +t.tag %></td>
           <td><%= t.post %></td>
           <td><%= format_timesince(t.created_at) %></td>
