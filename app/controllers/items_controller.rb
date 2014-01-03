@@ -1,26 +1,20 @@
 class ItemsController < ApplicationController
   helper_method :format_timesince
-  helper_method :can_delete
+  helper_method :can_delete, :sort_column, :sort_direction
   def show
     id = params[:id]
     @item = Item.find(id)
   end
   def index
-    #sort kind of works, no direction toggle yet. Also need to add param to session hash
-    if(params[:sort]==nil)
-      @sort = 'created_at'
-    else
-      @sort = params[:sort]
-    end
+
 
     @filter_message= params[:search]
-    @items = Item.all
     if params[:search]!=nil&&params[:search]!=""
       #@items = Item.order('created_at DESC').paginate(:page => params[:page])
-      @items = Item.order(@sort+ ' desc').paginate(:page => params[:page])
+      @items = Item.order(params[:sort] + ' ' + params[:direction]).paginate(:page => params[:page])
     else
       #@items = Item.order('created_at DESC').paginate(:page => params[:page])
-      @items = Item.order(@sort+ ' asc').paginate(:page => params[:page])
+      @items = Item.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page])
     end
   end
 
@@ -72,6 +66,19 @@ class ItemsController < ApplicationController
     @post = Item.find(params[:id])
     @post.unliked_by @user
     redirect_to items_path
+  end
+def sort_column
+    if params[:sort] != nil && params[:sort] != session[:sort]
+      session[:sort] = params[:sort]
+    end
+    session[:sort] || "created_at"
+  end
+  
+  def sort_direction
+    if params[:direction] != nil && params[:direction] != session[:direction]
+      session[:direction] = params[:direction]
+    end
+    return session[:direction] || "asc"
   end
 
 end

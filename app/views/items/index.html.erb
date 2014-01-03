@@ -65,7 +65,6 @@
               Post: <%= f.text_field :post%><br />
               <%= f.submit "Post"%>
             </div>
-
         <%end%>
     <%else%>
         <br>
@@ -77,8 +76,8 @@
 
 <div id="Post_Section">
   <!-- Sorting links -->
-<%= link_to 'Date', items_path(:sort => 'created_at'), :id => 'title_header' %>
-<%= link_to 'Tag', items_path(:sort => 'tag'), :id => 'title_header' %>
+<%= sortable "created_at", "Date" %>
+<%= sortable "tag", "Tag" %>
   <!-- Populates Items -->
   <% @items.each do |t| %>
     <div id="Post1" class="shadow">
