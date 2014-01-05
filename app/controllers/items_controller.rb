@@ -11,10 +11,10 @@ class ItemsController < ApplicationController
     @filter_message= params[:search]
     if params[:search]!=nil&&params[:search]!=""
       #@items = Item.order('created_at DESC').paginate(:page => params[:page])
-      @items = Item.order(params[:sort] + ' ' + params[:direction]).paginate(:page => params[:page])
+      @items = Item.order(params[:sort] + ' ' + params[:direction]).page(params[:page]).per_page(5)
     else
       #@items = Item.order('created_at DESC').paginate(:page => params[:page])
-      @items = Item.order(sort_column + ' ' + sort_direction).paginate(:page => params[:page])
+      @items = Item.order(sort_column + ' ' + sort_direction).page(params[:page]).per_page(5)
     end
   end
 

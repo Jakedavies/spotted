@@ -87,10 +87,11 @@
 <%= sortable "tag", "Tag" %>
 <%= sortable "cached_votes_up", "Votes" %>
   <!-- Populates Items -->
-  
-
+  <div id='items'>
+    <%= render @items %>
+  </div>
 </div>
-  <%= render "items" %>
+
 <!-- this is the page listing -->
 <%= will_paginate @posts %>
 
