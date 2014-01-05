@@ -59,11 +59,12 @@
 
 </div>
 
-<div id="Post_Bar">
+
   <% if current_user %>
         <h3 id="post">Make A Post</h3>
         <%= form_for :item do |f| %>
 
+        <div id="Post_Float_In">
             <div id ="tagform"; class="rounded-corners">
             Tag: <%= f.text_field :tag%><br />
             </div>
@@ -72,6 +73,8 @@
               Post: <%= f.text_field :post%><br />
               <%= f.submit "Post", :id => 'submit_button' %>
             </div>
+        </div>
+
         <%end%>
     <%else%>
 
@@ -79,7 +82,7 @@
         Please login to post
         <br>
     <%end%>
-    </div>
+
 </div>
 
 <div id="Post_Section">

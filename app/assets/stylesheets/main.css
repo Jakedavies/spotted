@@ -61,28 +61,17 @@ html{
 }
 
 
-#Post_Bar:hover{
-        position: fixed;
-        bottom: 0px;
-        right: 0px;
-        z-index: 2;
-        border-style: solid;
-        border-width: 1px;
-        border-color: black;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        width: 30%;
-        height: 15%;
-        transition: all 5s ease-in-out -5s;
-        background-color: white;
+#Post_Float_In{
+    position: absolute;
+    background-color: white;
+    border-style: solid; border-radius: 10px; border-color: black;
+    left: 50%;
+    width: 250px; /* Overall width of div */
+    height: 70px; /* Overall height of div */
+    top: -35px; /* half of the overall height */
+    margin-left: -125px; /* half of the overall width */
+    visibility: visible
 }
-
-
-#Post_Bar:hover #submit_button{
-        visibility: visible;
-}
-
-#Post_Bar:hover #
 
 
 #tagform{
@@ -120,6 +109,7 @@ html{
    border-spacing: 0 30px; 
    border-collapse: seperate;
 }
+
         
 td, th {  border: 0 none; height: 30px; }
             
