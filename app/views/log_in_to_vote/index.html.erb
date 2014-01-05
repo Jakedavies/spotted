@@ -5,14 +5,15 @@
   <title>Spotted!</title>
 </head>
 <body>
-    You must login to vote
-    <div id="user-widget">
+        <font size="40">You must log in to vote!</font> <div id="user-widget">
+
       <% if current_user %>
           Welcome <strong><%= current_user.name %></strong>!
           <%= link_to "Sign out", signout_path, id: "sign_out" %>
       <% else %>
-          <%= link_to image_tag('facebook.png'), id: "facebook_icon"%>
-          <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+          <%= link_to image_tag('SadPanda.png'), id: "Hang_In"%>
+          <%= link_to "Don't make us sad panda's! Sign in to vote!!!", "/auth/facebook", id: "sign_in" %>
       <% end %>
     </div>
 </body>
+

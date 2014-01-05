@@ -1,4 +1,5 @@
 <head>
+ <title> Welcome to Spotted! ;) </title>
   <!--testing piviotla-->
   <%= stylesheet_link_tag "main.css" %>
   <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
@@ -10,7 +11,7 @@
       });
   </script>
 
-  <title> Welcome to Spotted! </title>
+ 
 
 </head>
 <body>
@@ -83,10 +84,12 @@
 
 <div id="Post_Section">
   <!-- Sorting links -->
+  <h1>Sort by: </h1>
 <%= sortable "created_at", "Date" %>
 <%= sortable "tag", "Tag" %>
 <%= sortable "cached_votes_up", "Votes" %>
   <!-- Populates Items -->
+ 
   <div id='items'>
     <%= render @items %>
   </div>
