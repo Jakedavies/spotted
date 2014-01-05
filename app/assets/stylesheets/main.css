@@ -1,14 +1,11 @@
-@font-face { font-family: Awesome; src: url('/assets/fonts/FontAwesome.otf'), format('truetype'); }
-@font-face { font-family: 2Dumb; src: url('fonts/2Dumb.ttf'), format('truetype'); }
-
 
 html{
   font-family: "Awesome";
   overflow: auto;
+          background-image:url('dots.png');
+
 }
 
-body{
-        background-image:url('dots.png');
 }
 
 #Facebook_Login{
@@ -26,8 +23,6 @@ body{
         right: 8px;
         bottom: 10px;
         visibility: hidden;
-
-
 }
 
 #PostQ{
@@ -86,6 +81,8 @@ body{
 #Post_Bar:hover #submit_button{
         visibility: visible;
 }
+
+#Post_Bar:hover #
 
 
 #tagform{
