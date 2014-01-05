@@ -87,50 +87,10 @@
 <%= sortable "tag", "Tag" %>
 <%= sortable "cached_votes_up", "Votes" %>
   <!-- Populates Items -->
-  <% @items.each do |t| %>
-    <div id="Post1" class="shadow">
-      <table>
-        <tr>
-          <td> 
-            <% if current_user %>
-                <% if !User.find(session[:user_id]).voted_for? t %>
-                    <%= form_for( t, :url => vote_item_path(:id => t.id), :html => { :method => :post } ) do |f| %>
-                        <%= f.submit "Color" , :id => 'Color_Button' %>
-                    <% end %>
-                <% else %>
-                    <%= form_for( t, :url => unvote_item_path(:id => t.id), :html => { :method => :post } ) do |f| %>
-                        <%= f.submit "Uncolor" , :id => 'Color_Button' %>
-                    <% end %>
-                <% end %>
-            <% else %>
-                <%= button_to "Color", log_in_to_vote_index_path, :method => :get %>
-                <div class="rating">
-                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                </div>
-
-            <% end %>
-          </td>
-          <div id="Post_Stats_Top">
-            <p id="Vote_Count"> Total Votes: <%= t.votes.size %> </p>
-            <p id="Tag_Value"><%= '#' +t.tag %></p>
-          </div>
-
-          <p id="Post_Value"><%= t.post %></p>
-          <p id="Clock_Age"><%= format_timesince(t.created_at) %></p>
-
-
-          <td id="delete_tag">
-            <% if can_delete(t.created_at,t.user.to_i) %>
-                <%= link_to '✘ Delete', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
-            <% end %>
-          </td>
-        </tr>
-      </table>
-    </div>
-  <% end %>
+  
 
 </div>
-
+  <%= render "items" %>
 <!-- this is the page listing -->
 <%= will_paginate @posts %>
 
