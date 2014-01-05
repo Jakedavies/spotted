@@ -8,6 +8,7 @@ gem 'execjs'
 gem 'time_difference'
 gem 'acts_as_votable'
 
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -19,7 +19,14 @@
 	
 	<div id="Head_Bar">
 
-			<h1 >  <%= link_to " Spotted", items_path, id: "logo"  %></h1>
+			<h1 >  <%= link_to " Spotted", items_path, id:"logo"  %></h1>
+
+      <div id="Filter_Box">
+        FILTER!
+
+
+      </div>
+
 			<div id="Facebook_Login">			 
 		
        <% if current_user %>
@@ -62,11 +69,12 @@
 
             <div id="postform">
               Post: <%= f.text_field :post%><br />
-              <%= f.submit "Post"%>
+              <%= f.submit "Post", :id => 'submit_button' %>
             </div>
         <%end%>
     <%else%>
-        <br>
+
+        <br id="Not_Logged_In">
         Please login to post
         <br>
     <%end%>
@@ -87,24 +95,33 @@
             <% if current_user %>
                 <% if !User.find(session[:user_id]).voted_for? t %>
                     <%= form_for( t, :url => vote_item_path(:id => t.id), :html => { :method => :post } ) do |f| %>
-                        <%= f.submit "Color" %>
+                        <%= f.submit "Color" , :id => 'Color_Button' %>
                     <% end %>
                 <% else %>
                     <%= form_for( t, :url => unvote_item_path(:id => t.id), :html => { :method => :post } ) do |f| %>
-                        <%= f.submit "Uncolor" %>
+                        <%= f.submit "Uncolor" , :id => 'Color_Button' %>
                     <% end %>
                 <% end %>
             <% else %>
                 <%= button_to "Color", log_in_to_vote_index_path, :method => :get %>
+                <div class="rating">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                </div>
+
             <% end %>
           </td>
-          <td> Total Votes: <%= t.votes.size %> </td>
-          <td><%= '#' +t.tag %></td>
-          <td><%= t.post %></td>
-          <td><%= format_timesince(t.created_at) %></td>
+          <div id="Post_Stats_Top">
+            <p id="Vote_Count"> Total Votes: <%= t.votes.size %> </p>
+            <p id="Tag_Value"><%= '#' +t.tag %></p>
+          </div>
+
+          <p id="Post_Value"><%= t.post %></p>
+          <p id="Clock_Age"><%= format_timesince(t.created_at) %></p>
+
+
           <td id="delete_tag">
             <% if can_delete(t.created_at,t.user.to_i) %>
-                <%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
+                <%= link_to '✘ Delete', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
             <% end %>
           </td>
         </tr>

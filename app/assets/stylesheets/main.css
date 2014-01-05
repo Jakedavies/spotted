@@ -1,4 +1,4 @@
-@font-face { font-family: Awesome; src: url('fonts/FontAwesome.otf'), format('truetype'); } 
+@font-face { font-family: Awesome; src: url('/assets/fonts/FontAwesome.otf'), format('truetype'); } 
 @font-face { font-family: 2Dumb; src: url('fonts/2Dumb.ttf'), format('truetype'); } 
 
 
@@ -8,7 +8,7 @@ html{
 }
 
 body{
-			background-image:url('dots.png');
+	background-image:url('dots.png');
 }
 
 #Facebook_Login{
@@ -16,14 +16,28 @@ body{
 	padding-right: 10%;
 }
 
+#post{
+	padding-left: 5%;
+}
+
+#submit_button{
+	
+	position: fixed;
+	right: 8px;
+	bottom: 10px;
+	visibility: hidden;
+
+
+}
+
 #PostQ{
 	
 	font-family: 2Dumb;
 	font-size: 30px;
 	position: fixed;
-	bottom: -15px;
+	bottom: 20px;
 	z-index: 2;
-	right: 37%;
+	right: 2%;
 }
 
 
@@ -37,7 +51,7 @@ body{
 	border-color: black;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
-	width: 35%;
+	width: 30%;
 	height: 2%;
 	background-color: white;
 }
@@ -53,10 +67,28 @@ body{
 	border-color: black;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
-	width: 35%;
-	height: 8%;
+	width: 30%;
+	height: 15%;
 	transition: all 5s ease-in-out -5s;
 	background-color: white;
+}
+
+
+#Post_Bar:hover  #submit_button{
+	visibility: visible;
+}
+
+
+#tagform{
+	float: right;
+	padding-right: 10px;
+}
+
+
+#postform{
+	float: right;
+	padding-right: 5px;
+
 }
 
 #Post_Section{
@@ -65,14 +97,28 @@ body{
 	height: 1000px;
 	padding-left: 10%;
 
-
 }
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
 
 #Post1{
 	margin-top: 15px;
 	width: 80%;
 	padding-left: 10%;
-	height: 15%;
 	background-color:  White;
 	float:left;
 	padding-top: 1%;
@@ -84,60 +130,7 @@ body{
 	border-radius: 10px;
 	box-shadow: 10px 10px 5px #888888;
 
-}
-
-#Post2{
-	margin-top: 15px;
-	width: 80%;
-	padding-left: 10%;
-	height: 15%;
-	background-color: white;
-	float:left;
-	padding-top: 1%;
-	padding-left: 1%;
-	position: static;
-	z-index: 2;
-	border-style: solid;
-	border-width: 0.3px;
-	border-radius: 10px;
-		border-width: 0.3px;
-
-	box-shadow: 10px 10px 5px #888888;
-}
-
-#Post3{
-	margin-top: 15px;
-	width: 80%;
-	padding-left: 10%;
-	height: 15%;
-	background-color: white;
-	float:left;
-	padding-top: 1%;
-	padding-left: 1%;
-	position: static;
-	z-index: 2;
-	border-style: solid;
-	border-radius: 10px;
-		border-width: 0.3px;
-
-	box-shadow: 10px 10px 5px #888888;
-}
-#Post4{
-	margin-top: 15px;
-	width: 80%;
-	padding-left: 10%;
-	height: 15%;
-	background-color: white;
-	float:left;
-	padding-top: 1%;
-	padding-left: 1%;
-	position: static;
-	z-index: 2;
-	border-style: solid;
-	border-width: 0.3px;
-
-	border-radius: 10px;
-	box-shadow: 10px 10px 5px #888888;
+	margin-left:5%; 
 }
 
 
@@ -152,15 +145,14 @@ body{
 
 #Logo{
 	width: 10%;
-	margin-top: 1%;
-	margin-left: 10%;
+	padding-left: 100px;
 	margin-bottom: auto;
 	z-index: 4;
-}
+} 
 
 #Logo:hover{
-	margin-top: 1%;
-	margin-left: 10%;
+	
+	padding-left: 100px;
 	margin-bottom: auto;
 	font-color:  red ;
 	color: #60c5ea;
@@ -200,6 +192,69 @@ a:hover {
 COLOR: #60c5ea;
 }
 
+#Post_Stats_Top{
+	float: left;
+	float: top;
+}
+
+#Vote_Count{
+	float: left;
+	border-width: 1px;
+ 	border-style: solid;
+ 	border-color: black;
+ 	border-radius: 8px;
+}
+
+#Filter_Box{
+	width: 100px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	border-radius: 10px;
+	position: fixed;
+	margin-bottom: auto;
+	top: 30px;
+	margin-left: -50px;
+	  left: 50%;
+
+}
+
+#Filter_Box:active{
+	width: 200px;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	border-radius: 10px;
+	position: fixed;
+	margin-bottom: auto;
+	top: 30px;
+		margin-left: -100px;
+	  left: 50%;
+
+}
+
+#Color_Button{
+
+}
+
+#Tag_Value{
+ float: right;
+ border-width: 1px;
+ border-style: solid;
+ border-color: black;
+ border-radius: 8px;
+
+}
+
+#Post_Value{
+
+}
+
+#Not_Logged_In{
+	font-size:45px;
+	padding-top: 2px;
+}
+
 
 #Head_Bar{
 	background-color: white;
@@ -216,9 +271,10 @@ COLOR: #60c5ea;
     border-top:0px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius:  10px;
-    box-shadow: 10px 10px 5px #888888;
+    box-shadow: 15px 15px 10px #888888;
     z-index: 3;
 }
+
 td{
 	border: 1px solid black;
 }
