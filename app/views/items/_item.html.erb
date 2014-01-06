@@ -1,17 +1,4 @@
-<% @items.each do |t| %>
- 
 
-  <table id="PostIndex">
-    <tr>
-      <th>Upvotes</th>
-      <th>Why Hello There ;)</th>
-      <th>Where!</th>
-      <th>When</th>
-      <th></th>
-
-    </tr>
-
-    <% @items.each do |t| %>
         <tr <% if current_user && User.find(session[:user_id]).voted_for?(t) %> id="colored" <% end %>>
           <div>
           <td><div class="/circle">
@@ -29,15 +16,13 @@
                 <%= button_to "Color", log_in_to_vote_index_path, :method => :get %>
             <% end %>
           </div></td>
-          <td><%= t.post %></td>
-          <td><%= t.tag %></td>
-          <td><%= format_timesince(t.created_at) %></td>
+          <td><%= item.post %></td>
+          <td><%= item.tag %></td>
+          <td><%= format_timesince(item.created_at) %></td>
           <td id="delete_tag">
-            <% if can_delete(t.created_at,t.user.to_i) %>
-                <%= link_to '✘', item_path(t), :confirm => 'Are you sure?', :method => :delete %>
+            <% if can_delete(item.created_at,item.user.to_i) %>
+                <%= link_to '✘', item_path(item), :confirm => 'Are you sure?', :method => :delete %>
             <% end %>
           </td>
+          </div>
         </tr>
-      </table>
-    </div>
-  <% end %>

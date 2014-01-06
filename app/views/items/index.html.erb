@@ -85,8 +85,20 @@
 <%= sortable "cached_votes_up", "Votes" %>
   <!-- Populates Items -->
  
-  <div id='items'>
-    <%= render 'item' %>
+  <div id='items'> <!--dont change this div id it will break shit -->
+    <table >
+      <thead class="PostIndex">
+        <tr>
+          <th>Upvotes</th>
+          <th>Why Hello There ;)</th>
+          <th>Where!</th>
+          <th>When</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="PostIndex">
+    <%= render @items %>
+      </tbody>
   </div>
   <%= will_paginate @items %>
 </div>

@@ -1,4 +1,4 @@
-$('#items').append('<%= j render("item") %>');
+$('#items').append('<%= j render(@items) %>');
 <% if @items.next_page %>
   $('.pagination').replaceWith('<%= j will_paginate(@items) %>');
 <% else %>
