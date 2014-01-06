@@ -1,14 +1,6 @@
 <head>
   <!--testing piviotla-->
   <%= stylesheet_link_tag "main.css" %>
-  <script src="http://code.jquery.com/jquery-1.7.2.js"></script>
-  <script type="text/javascript">
-      $(function(){
-          $(".circle").click(function(){
-              $(this).css("background", "#58488A");
-          });
-      });
-  </script>
 
   <title> Welcome to Spotted! </title>
 
@@ -88,11 +80,10 @@
 <%= sortable "cached_votes_up", "Votes" %>
   <!-- Populates Items -->
   <div id='items'>
-    <%= render @items %>
+    <%= render 'item' %>
   </div>
+  <%= will_paginate @items %>
 </div>
 
-<!-- this is the page listing -->
-<%= will_paginate @posts %>
 
 </body>

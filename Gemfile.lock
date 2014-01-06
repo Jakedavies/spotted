@@ -42,6 +42,8 @@ GEM
     execjs (2.0.2)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
+    font-awesome-rails (4.0.3.1)
+      railties (>= 3.2, < 5.0)
     haml (4.0.4)
       tilt
     hashie (2.0.5)
@@ -132,6 +134,7 @@ DEPENDENCIES
   acts_as_votable
   coffee-rails (~> 3.2.1)
   execjs
+  font-awesome-rails
   haml
   jquery-rails
   omniauth
