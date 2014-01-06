@@ -1,8 +1,9 @@
 <head>
+ <title> Welcome to Spotted! ;) </title>
   <!--testing piviotla-->
   <%= stylesheet_link_tag "main.css" %>
 
-  <title> Welcome to Spotted! </title>
+ 
 
 </head>
 <body>
@@ -11,7 +12,7 @@
 	
 	<div id="Head_Bar">
 
-			<h1 >  <%= link_to " Spotted", items_path, id:"logo"  %></h1>
+			<h1 >  <%= link_to " Spotted", items_path, id:"Logo"  %></h1>
 
       <div id="Filter_Box">
         FILTER!
@@ -50,11 +51,12 @@
 
 </div>
 
-<div id="Post_Bar">
+
   <% if current_user %>
         <h3 id="post">Make A Post</h3>
         <%= form_for :item do |f| %>
 
+        <div id="Post_Float_In">
             <div id ="tagform"; class="rounded-corners">
             Tag: <%= f.text_field :tag%><br />
             </div>
@@ -63,6 +65,8 @@
               Post: <%= f.text_field :post%><br />
               <%= f.submit "Post", :id => 'submit_button' %>
             </div>
+        </div>
+
         <%end%>
     <%else%>
 
@@ -70,15 +74,17 @@
         Please login to post
         <br>
     <%end%>
-    </div>
+
 </div>
 
 <div id="Post_Section">
   <!-- Sorting links -->
+  <h1>Sort by: </h1>
 <%= sortable "created_at", "Date" %>
 <%= sortable "tag", "Tag" %>
 <%= sortable "cached_votes_up", "Votes" %>
   <!-- Populates Items -->
+ 
   <div id='items'>
     <%= render 'item' %>
   </div>

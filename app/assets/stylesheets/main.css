@@ -1,181 +1,198 @@
-@font-face { font-family: Awesome; src: url('/assets/fonts/FontAwesome.otf'), format('truetype'); } 
-@font-face { font-family: 2Dumb; src: url('fonts/2Dumb.ttf'), format('truetype'); } 
-@import "font-awesome";
-
-
 html{
+  font-family: "Awesome";
   overflow: auto;
+          background-image:url('dots.png');
+
 }
 
-body{
-	background-image:url('dots.png');
 }
 
 #Facebook_Login{
-	float: right;
-	padding-right: 10%;
+        float: right;
+        padding-right: 10%;
 }
-a=
+
 #post{
-	padding-left: 5%;
+        padding-left: 5%;
 }
 
 #submit_button{
-	
-	position: fixed;
-	right: 8px;
-	bottom: 10px;
-	visibility: hidden;
-
-
+        
+        position: fixed;
+        right: 8px;
+        bottom: 10px;
+        visibility: hidden;
 }
 
 #PostQ{
-	
-	font-family: 2Dumb;
-	font-size: 30px;
-	position: fixed;
-	bottom: 20px;
-	z-index: 2;
-	right: 2%;
+        
+        font-family: 2Dumb;
+        font-size: 30px;
+        position: fixed;
+        bottom: 20px;
+        z-index: 2;
+        right: 2%;
 }
 
 
 #Post_Bar{
-	position: fixed;
-	bottom: 0px;
-	right: 0px;
-	z-index: 2;
-	border-style: solid;
-	border-width: 1px;
-	border-color: black;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	width: 30%;
-	height: 2%;
-	background-color: white;
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        z-index: 2;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        width: 30%;
+        height: 2%;
+        background-color: white;
+}
+
+#sign_in{
+    color: white;
+
+}
+
+#sign_in:hover{
+    color:#d3d3d3
 }
 
 
-#Post_Bar:hover{
-	position: fixed;
-	bottom: 0px;
-	right: 0px;
-	z-index: 2;
-	border-style: solid;
-	border-width: 1px;
-	border-color: black;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	width: 30%;
-	height: 15%;
-	transition: all 5s ease-in-out -5s;
-	background-color: white;
-}
-
-
-#Post_Bar:hover  #submit_button{
-	visibility: visible;
+#Post_Float_In{
+    position: absolute;
+    background-color: white;
+    border-style: solid; border-radius: 10px; border-color: black;
+    left: 50%;
+    width: 250px; /* Overall width of div */
+    height: 70px; /* Overall height of div */
+    top: -35px; /* half of the overall height */
+    margin-left: -125px; /* half of the overall width */
+    visibility: visible
 }
 
 
 #tagform{
-	float: right;
-	padding-right: 10px;
+        float: right;
+        padding-right: 10px;
 }
 
 
 #postform{
-	float: right;
-	padding-right: 5px;
+        float: right;
+        padding-right: 5px;
 
 }
 
 #Post_Section{
-	margin-top: 100px;
-	float: below;
-	height: 1000px;
-	padding-left: 10%;
+        margin-top: 100px;
+        float: below;
+        height: 1000px;
+        padding-left: 10%;
 
 }
 
-.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-}
-.rating > span {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-}
+
+/*CODE FROM http://codepen.io/mastastealth/pen/BHJLb
+*/
 
 
-#Post1{
-	margin-top: 15px;
-	width: 80%;
-	padding-left: 10%;
-	background-color:  White;
-	float:left;
-	padding-top: 1%;
-	padding-left: 1%;
-	position: static;
-	z-index: 2;
-	border-style: solid;
-	border-width: 0.3px;
-	border-radius: 10px;
-	box-shadow: 10px 10px 5px #888888;
-
-	margin-left:5%; 
+#PostIndex { 
+    top: 0px;
+  width: 90%;
+  overflow-x: none;
+  color: #333;
+  font-family: Helvetica, Arial, sans-serif;
+  /* Table reset stuff */
+   border-spacing: 0 30px; 
+   border-collapse: seperate;
 }
 
+        
+td, th {  border: 0 none; height: 30px; }
+            
+th {
+    background: #60c5ea;
+    color: white; font-weight: bold; font-size: 30px;
+    height: 100px;
+box-shadow: 10px 10px 5px #888888;
+
+}
+        
+td { background: #FAFAFA; text-align: center; height: 150px;}
+
+        
+tr:nth-child(even) td { background: #EEE;  box-shadow: 5px 5px 3px #888888; border: 0px;
+} 
+
+tr:nth-child(odd) td { background: #FDFDFD; box-shadow: 5px 5px 3px #888888; border: 0px;
+}
+
+tr td:first-child, tr th:first-child {
+    width: 80px; 
+    border-spacing: 0 30px;
+    border-collapse: collapse;
+}
+
+/* Add border-radius to specific cells! */
+tr:first-child th:nth-child(2) { 
+  border-radius: 5px 0 0 0; 
+} 
+
+tr:first-child th:last-child { 
+  border-radius: 0 5px 0 0; 
+}
+
+/*CODE FROM http://codepen.io/mastastealth/pen/BHJLb
+*/
 
 #Logged_In{
-	color: #60c5ea;
-	width: 400px;
-	height: 20px;
-	position: fixed;
-	top: 3%;
-	right: 1%;
+        color: white;
+        width: 400px;
+        height: 20px;
+        position: fixed;
+        top: 3%;
+        right: 1%;
 }
 
 #Logo{
-	width: 10%;
-	padding-left: 100px;
-	margin-bottom: auto;
-	z-index: 4;
-	font-family: font-awesome;
-} 
+
+        width: 10%;
+        font-size: 40px;
+        color: white;
+        padding-left: 100px;
+        margin-bottom: auto;
+        z-index: 4;
+}
 
 #Logo:hover{
-	
-	padding-left: 100px;
-	margin-bottom: auto;
-	font-color:  red ;
-	color: #60c5ea;
+        
+        padding-left: 100px;
+        margin-bottom: auto;
+        font-color: red ;
+        color: #d3d3d3;
+        font-size: 45px;
 }
 
 
 
 #Login_Button_Container{
-	width: 200px;
-	height: 20px;
-	border-style: solid;
-	border-color: black;
-	border-width: 1px;
-	border-radius: 10px;
-	position: fixed;
-	top: 3%;
-	right: 2%;
+        width: 200px;
+        height: 20px;
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+        border-radius: 10px;
+        position: fixed;
+        top: 3%;
+        right: 5%;
+        color: white;
 }
 
 #Login_Button{
-	font-size: 15px;
-	margin-left: 8%; 
+        font-size: 15px;
+        margin-left: 8%;
 }
 
 
@@ -183,105 +200,122 @@ a=
 /*
 CSS For Links.
 */
-a:link {
-COLOR: black;
-}
-a:visited {
-COLOR: black;
-}
-a:hover {
-COLOR: #60c5ea;
-}
+a:link    { COLOR: black;}
+a:visited {COLOR: black;}
+a:hover   {COLOR: white;}
+a:link    {text-decoration:none;}
 
 #Post_Stats_Top{
-	float: left;
-	float: top;
+        float: left;
+        float: top;
+}
+#Post_Section_Bottom{
+    float: left;
+    float: below;
 }
 
+
+#tag{
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+    padding-left: 10px;
+
+}
+#cached_votes_up{
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+    padding-left: 10px;
+}
+#created_at{
+    font-size: 30px;
+    color: black;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#Tag_Value{
+    float: right;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px;
+
+
+}
+
+
 #Vote_Count{
-	float: left;
-	border-width: 1px;
- 	border-style: solid;
- 	border-color: black;
- 	border-radius: 8px;
+        
+         float: left;
+         border-width: 1px;
+         border-style: solid;
+         border-color: black;
+         border-radius: 8px;
 }
 
 #Filter_Box{
-	width: 100px;
-	border-style: solid;
-	border-color: black;
-	border-width: 1px;
-	border-radius: 10px;
-	position: fixed;
-	margin-bottom: auto;
-	top: 30px;
-	margin-left: -50px;
-	  left: 50%;
+        width: 100px;
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+        border-radius: 10px;
+        position: fixed;
+        margin-bottom: auto;
+        top: 30px;
+        margin-left: -50px;
+         left: 50%;
 
 }
 
 #Filter_Box:active{
-	width: 200px;
-	border-style: solid;
-	border-color: black;
-	border-width: 1px;
-	border-radius: 10px;
-	position: fixed;
-	margin-bottom: auto;
-	top: 30px;
-		margin-left: -100px;
-	  left: 50%;
+        width: 200px;
+        border-style: solid;
+        border-color: black;
+        border-width: 1px;
+        border-radius: 10px;
+        position: fixed;
+        margin-bottom: auto;
+        top: 30px;
+                margin-left: -100px;
+         left: 50%;
 
 }
 
-#Color_Button{
-
-}
-
-#Tag_Value{
- float: right;
- border-width: 1px;
- border-style: solid;
- border-color: black;
- border-radius: 8px;
-
-}
-
-#Post_Value{
-
-}
 
 #Not_Logged_In{
-	font-size:45px;
-	padding-top: 2px;
+        font-size:45px;
+        padding-top: 2px;
+        color: white;
 }
 
 
 #Head_Bar{
-	background-color: white;
-	width: 100%;
-	height: 80px;
-	position: fixed;
+        background-color: #60c5ea;
+        width: 100%;
+        height: 90px;
+        position: fixed;
+        color: white;
+        font-size: 15px;
     top: 0px;
     left: 0px;
     border-style: solid;
     border-color: black;
-    border-width: 1px;
+    border-width: 0px;
     border-left: 0px;
     border-right:0px;
     border-top:0px;
     border-bottom-right-radius: 10px;
-    border-bottom-left-radius:  10px;
+    border-bottom-left-radius: 10px;
     box-shadow: 15px 15px 10px #888888;
     z-index: 3;
 }
 
-td{
-	border: 1px solid black;
-}
+
 .asc{
-	background-color: blue;
+        background-color: blue;
 }
 .desc{
-	background-color: yellow;
+        background-color: yellow;
 }
