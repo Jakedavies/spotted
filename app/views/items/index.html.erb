@@ -85,9 +85,8 @@
 <%= sortable "cached_votes_up", "Votes" %>
   <!-- Populates Items -->
  
-  <div id='items'> <!--dont change this div id it will break shit -->
-    <table >
-      <thead class="PostIndex">
+  <!--dont change this div id it will break shit -->
+    <table class="PostIndex" id="items">
         <tr>
           <th>Upvotes</th>
           <th>Why Hello There ;)</th>
@@ -95,11 +94,8 @@
           <th>When</th>
           <th></th>
         </tr>
-      </thead>
-      <tbody class="PostIndex">
-    <%= render @items %>
-      </tbody>
-  </div>
+      <%= render @items %>
+    </table>
   <%= will_paginate @items %>
 </div>
 
