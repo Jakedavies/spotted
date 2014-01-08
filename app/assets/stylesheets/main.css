@@ -142,6 +142,15 @@ html{
 
 }
 
+#Filter_Section{
+  width:40%;
+  background-color: white; 
+  margin-top: 10%;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  
+}
 
 /*CODE FROM http://codepen.io/mastastealth/pen/BHJLb
 */
@@ -162,7 +171,8 @@ html{
 td, th {  border: 0 none; height: 30px; }
             
 th {
-    background: #81A594;
+    background: #5B9C64
+;
     color: white; font-weight: bold; font-size: 30px;
     height: 100px;
 box-shadow: 10px 10px 5px #888888;
@@ -179,7 +189,6 @@ tr:nth-child(odd) td { background: #FDFDFD; box-shadow: 5px 5px 3px #888888; bor
 }
 
 tr td:first-child, tr th:first-child {
-    width: 80px; 
     border-spacing: 0 30px;
     border-collapse: collapse;
 }
@@ -341,12 +350,14 @@ a:link    {text-decoration:none;}
 
 
 #Head_Bar{
-        background-color: #00628B;
+        background-color:#2F4F4F
+;
         width: 100%;
         height: 90px;
         position: fixed;
         color: white;
         font-size: 15px;
+  
     top: 0px;
     left: 0px;
     border-style: solid;
@@ -355,8 +366,7 @@ a:link    {text-decoration:none;}
     border-left: 0px;
     border-right:0px;
     border-top:0px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+
     box-shadow: 15px 15px 10px #888888;
     z-index: 3;
 }

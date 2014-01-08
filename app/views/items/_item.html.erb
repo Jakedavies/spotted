@@ -1,6 +1,7 @@
 
         <tr <% if current_user && User.find(session[:user_id]).voted_for?(t) %> id="colored" <% end %>>
-            <td><div class="/circle">
+            <td>
+             <div class="/circle">
               <% if current_user %>
                   <% if !User.find(session[:user_id]).voted_for? t %>
                       <%= form_for( t, :url => vote_item_path(:id => t.id), :html => { :method => :post } ) do |f| %>
@@ -14,7 +15,8 @@
               <% else %>
                   <%= button_to "Color", log_in_to_vote_index_path, :method => :get %>
               <% end %>
-            </div></td>
+            </div>
+            </td>
             <td><%= item.post %></td>
             <td><%= item.tag %></td>
             <td><%= format_timesince(item.created_at) %></td>

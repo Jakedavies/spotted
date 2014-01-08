@@ -51,7 +51,7 @@
 
 
 <div id="Post_Bar">
-  <% if current_user %>
+   <% if current_user %>
         <h3 id="post">Make A Post</h3>
         <%= form_for :item do |f| %>
 
@@ -77,11 +77,12 @@
 
 <div id="Post_Section">
   <!-- Sorting links -->
-  <h1>Sort by: </h1>
-<%= sortable "created_at", "Date" %>
-<%= sortable "tag", "Tag" %>
-<%= sortable "cached_votes_up", "Votes" %>
-  <!-- Populates Items -->
+  <div id="Filter_Section">
+    <h1>Sort by:     <%= sortable "created_at", "Date" %> <%= sortable "tag", "Tag" %>     <%= sortable "cached_votes_up", "Votes" %> </h1>
+  </div>
+    
+    
+    <!-- Populates Items -->
  
   <!--dont change this div id it will break shit -->
     <table class="PostIndex" id="items">
