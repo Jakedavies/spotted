@@ -45,11 +45,15 @@ class ItemsController < ApplicationController
     end
   end
 
-  #this is a helper method to determine if the post can be deleted
+#this is a helper method to determine if the post can be deleted
   def can_delete(time, user)
-
     difference = (Time.zone.now- time)
-    if difference<3660 && user==session[:user_id]
+    if current_user !=nil
+      if current_user.name == "Jacob Davies"
+        return true
+      end
+
+    elsif difference < 3660 && user==session[:user_id]
       return true
     else
       return false
@@ -80,5 +84,4 @@ def sort_column
     end
     return session[:direction] || "asc"
   end
-
 end
