@@ -15,6 +15,7 @@
               <% else %>
                   <%= button_to "Color", log_in_to_vote_index_path, :method => :get %>
               <% end %>
+	     <%= item.cached_votes_up %>
             </div>
             </td>
             <td> <i class="fa fa-quote-left fa-2x pull-left fa-border"> <%= item.post %> <i class="fa fa-quote-right fa-1x pull-left fa-border"></i> </i>  </td> 
