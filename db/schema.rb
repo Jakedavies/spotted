@@ -11,16 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131217035911) do
+ActiveRecord::Schema.define(:version => 20140114191036) do
 
   create_table "items", :force => true do |t|
     t.text     "post"
     t.text     "tag"
     t.string   "user"
     t.decimal  "views"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.integer  "cached_votes_total", :default => 0
+    t.integer  "cached_votes_score", :default => 0
+    t.integer  "cached_votes_up",    :default => 0
+    t.integer  "cached_votes_down",  :default => 0
   end
+
+  add_index "items", ["cached_votes_down"], :name => "index_items_on_cached_votes_down"
+  add_index "items", ["cached_votes_score"], :name => "index_items_on_cached_votes_score"
+  add_index "items", ["cached_votes_total"], :name => "index_items_on_cached_votes_total"
+  add_index "items", ["cached_votes_up"], :name => "index_items_on_cached_votes_up"
 
   create_table "users", :force => true do |t|
     t.string   "provider"
