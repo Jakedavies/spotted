@@ -18,7 +18,7 @@
 	     <%= item.cached_votes_up %>
             </div>
             </td>
-            <td> <i class="fa fa-quote-left fa-2x pull-left fa-border"> <%= item.post %> <i class="fa fa-quote-right fa-1x pull-left fa-border"></i> </i>  </td> 
+            <td> <%= item.post %></td> 
             <td><%= item.tag %></td>
             <td><%= format_timesince(item.created_at) %></td>
             <td id="delete_tag">
