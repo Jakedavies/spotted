@@ -7,7 +7,8 @@ gem 'omniauth-facebook', '1.4.0'
 gem 'execjs'
 gem 'time_difference'
 gem 'acts_as_votable'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
+gem 'mailboxer'
 
 # Gems used only for assets and not required
 # in production environments by default.

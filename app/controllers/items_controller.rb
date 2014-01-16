@@ -49,7 +49,7 @@ class ItemsController < ApplicationController
   def can_delete(time, user)
     difference = (Time.zone.now- time)
     if current_user !=nil
-      if current_user.name == "Jacob Davies" || current_user.name == "Nolan Koriath"
+      if current_user.uid == "539237793"
         return true
       end
 
