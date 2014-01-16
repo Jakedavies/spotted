@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+  has_many :user_conversations
+  has_many :conversations, :through => :user_conversations
+  has_many :messages, :through => :conversations
 end

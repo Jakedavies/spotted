@@ -1,4 +1,7 @@
 TestApp::Application.routes.draw do
+  resources :user_conversations
+
+
   get "welcome/index"
   get "log_in_to_vote/index"
   get "profile/index"
