@@ -1,9 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_voter
   acts_as_messageable
-  def name
-    return self.name
-  end
   def mailboxer_email(object)
     return nil
   end

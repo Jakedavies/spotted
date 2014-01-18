@@ -6,4 +6,7 @@
 
 <% end %>
 <%=render "conversations/conversations" %>
-<%= current_user.mailbox.conversations %>
+<% debugger %>
+sender: <%= current_user.mailbox.inbox.first.messages.first.sender.name%>
+subject:<%= current_user.mailbox.inbox.first.messages.first.subject %>
+body: <%= current_user.mailbox.inbox.first.messages.first.body %>
