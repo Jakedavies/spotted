@@ -5,11 +5,13 @@ TestApp::Application.routes.draw do
   get "welcome/index"
   get "log_in_to_vote/index"
   get "profile/index"
-
+ 
+ resources :conversations
  resources :items
+ resources :messages
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
+  
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

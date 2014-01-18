@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'debugger'
 gem 'rails', '3.2.14'
 gem 'pg'
 gem 'omniauth'
