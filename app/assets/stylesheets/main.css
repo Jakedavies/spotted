@@ -152,40 +152,47 @@ html{
 /*CODE FROM http://codepen.io/mastastealth/pen/BHJLb
 */
 
+.align-right{ position:right; float:right; margin:  200px 50px 0px 0px; }
+.align-left { position:left;float: left; margin:   -150px 0px  0px 50px;}
 
 .PostIndex { 
-    top: 0px;
-  width: 90%;
-  overflow-x: none;
-  color: #333;
-  /* Table reset stuff */
-   border-spacing: 0 30px; 
-   border-collapse: seperate;
+  border-radius: 5px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top:0;
+  color: white;
+  border-collapse: collapse;
 }
 
         
 td, th {  border: 0 none; height: 30px; }
             
 th {
-    background: #539DC2;
-    color: white; font-weight: bold; font-size: 30px;
+    text-shadow: 3px 3px 3px black;
+    background: #2284BA;
+    color: white ; font-weight: bold; font-size: 50px;
     height: 100px;
-box-shadow: 10px 10px 5px #888888;
+    text-align: center;
+    padding-left:10px;
 
 }
         
-td { background: #FAFAFA; text-align: center; height: 150px;}
+td { background: #FAFAFA; text-align: center; padding-left: 10px; height: 600px;}
 
         
-tr:nth-child(even) td { background: #EEE;  box-shadow: 5px 5px 3px #888888; border: 0px;
+tr:nth-child(even) td { background: #272727;  font-weight: bold; border: 0px; font-size: 35px; padding-left: 15px; text-shadow: 1px 1px 1px black; 
 } 
 
-tr:nth-child(odd) td { background: #EEE; box-shadow: 5px 5px 3px #888888; border: 0px;
+tr:nth-child(odd) td { background: #2284BA; font-weight: bold; border: 0px; font-size: 35px; padding-left: 15px; text-shadow: 1px 1px 1px black;
 }
 
+
+
 tr td:first-child, tr th:first-child {
-    border-spacing: 0 30px;
+    border-spacing: 0 0px;
     border-collapse: collapse;
+    width: 10px;
 }
 
 /* Add border-radius to specific cells! */
@@ -197,8 +204,6 @@ tr:first-child th:last-child {
   border-radius: 0 5px 0 0; 
 }
 
-/*CODE FROM http://codepen.io/mastastealth/pen/BHJLb
-*/
 
 #Logged_In{
         color: white;

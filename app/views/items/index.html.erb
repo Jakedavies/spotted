@@ -10,7 +10,7 @@
 
 
 	
-	<div id="Head_Bar">
+	<!-- <div id="Head_Bar">
     
 
 
@@ -45,12 +45,15 @@
     </div>
 </div>
 
+
+
 <div id="PostQ">
 
   <p>Want to Post?</p>
 
 </div>
 
+-->
 
 <div id="Post_Bar">
    <% if current_user %>
@@ -78,10 +81,12 @@
 </div>
 
 <div id="Post_Section">
-  <!-- Sorting links -->
+  <!-- 
   <div id="Filter_Section">
     <h1>Sort by:     <%= sortable "created_at", "Date" %> <%= sortable "tag", "Tag" %>     <%= sortable "cached_votes_up", "Votes" %> </h1>
   </div>
+
+  Sorting links -->
     
     
     <!-- Populates Items -->
@@ -90,9 +95,11 @@
     <table class="PostIndex" id="items">
         <tr>
           <th>Upvotes</th>
-          <th>Why Hello There ;)</th>
-          <th>Where!</th>
-          <th>When</th>
+          <th></th>
+          <th>Posts </th>
+          <th></th>
+          <th>Where</th>
+          <th>   When</th>
           <th></th>
         </tr>
       <%= render @items %>
