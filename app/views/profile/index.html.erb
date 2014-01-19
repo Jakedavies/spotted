@@ -5,7 +5,8 @@
   <h1> Turn around now, you shouldn't be able to get here when you are not logged in! </h1>
 
 <% end %>
-<%=render "conversations/conversations" %>
+<%=render "conversations/conversation" %>
+<%=render "messages/send" %>
 <h1><%= current_user.name%></h1>
 sender: <%= current_user.mailbox.inbox.first.messages.first.sender.name%>
 subject:<%= current_user.mailbox.inbox.first.messages.first.subject %>

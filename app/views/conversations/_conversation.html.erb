@@ -1,0 +1,4 @@
+<% @convos = current_user.mailbox.conversations %>
+<%= content_tag_for(:li, @convos) do |conversation| %>
+    <%= link_to conversation.subject, conversation %>
+<%end%>
