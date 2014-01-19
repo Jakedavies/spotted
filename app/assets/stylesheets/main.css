@@ -175,10 +175,10 @@ html{
 td, th {  border: 0 none; height: 30px; }
             
 th {
-    text-shadow: 3px 3px 3px black;
+    text-shadow: 1px 1px 1px black;
     background: #2284BA;
     color: white ; font-weight: bold; font-size: 50px;
-    height: 100px;
+    height: 150px;
     text-align: center;
     padding-left:10px;
 
@@ -353,62 +353,47 @@ a:link    {text-decoration:none;}
 }
 
 #Button_Group_Left{
+    position:fixed;
+    background-color: #2284BA;
+    width:8%;
+    height:400px;
+    top:40%;
  
 }
 
-#Button:active{
-    width: 200px;
-       position:fixed;
-       z-index: 55;
-    top: 40%;
-    left: 10px;
-    color:white;
-    font-weight: bold;
-    background-color: #2284BA ;
-    border-radius:10px;
-    text-align: center;
-}
+
 
 #Button_Post{
 
-   position:fixed;
-    top: 40%;
-    left: 0;
-    width: 8%;
+    margin-top: 20px;
     color:white;
     font-weight: bold;
     background-color: #2284BA ;
     text-align: center;
+    
 
 }
 
 
 #Button_Login{
 
-    width: 8%;
-   position:fixed;
-    top: 60%;
-    padding-top: 10px;
-    left: 0;
+    margin-top: 20px;
     color:white;
     font-weight: bold;
     background-color: #2284BA ;
     text-align: center;
+    float:below;
 
 }
 
 #Button_Filter{
 
-    width: 8%;
-   position:fixed;
-    top: 53%;
-    padding-top: 10px;
-    left: 0;
-    
+    margin-top: 20px;
     color:white;
     font-weight: bold;
     background-color: #2284BA ;
     text-align: center;
+    float:below;
 
 }
 
@@ -427,17 +412,12 @@ a:link    {text-decoration:none;}
 
 
 #Button_Profile{
-
-    width: 8%;
-   position:fixed;
-    top: 46%;
-    padding-top: 10px;
-    left: 0;
-    
+    margin-top: 35px;
     color:white;
     font-weight: bold;
     background-color: #2284BA ;
     text-align: center;
+    float:below;
 
 }
 
