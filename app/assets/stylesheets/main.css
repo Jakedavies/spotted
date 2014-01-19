@@ -47,14 +47,6 @@ html{
         background-color: white;
 }
 
-#sign_in{
-    color: white;
-
-}
-
-#sign_in:hover{
-    color:#d3d3d3
-}
 
 
 /*POST BUTTON TEMP*/
@@ -358,7 +350,8 @@ a:link    {text-decoration:none;}
     width:8%;
     height:400px;
     top:40%;
- 
+    overflow-x: none;
+    word-wrap: break-word
 }
 
 
