@@ -149,20 +149,26 @@ html{
   
 }
 
+#Navigation{
+    position: fixed;
+    top: 50%;
+    color: white;
+    font-weight: bold;
+}
+
 /*CODE FROM http://codepen.io/mastastealth/pen/BHJLb
 */
 
-.align-right{ position:right; float:right; margin:  200px 50px 0px 0px; }
-.align-left { position:left;float: left; margin:   -150px 0px  0px 50px;}
+.align-right{ position:right; float:right; margin:  200px 50px 0px 0px; padding-left: 5px;}
+.align-left { position:left;float: left; margin:   -150px 0px  0px 50px; padding-right: 5px;}
 
 .PostIndex { 
-  border-radius: 5px;
-  width: 100%;
+  width:80%;
   position: absolute;
-  left: 0;
-  top:0;
+  top:0px;
   color: white;
   border-collapse: collapse;
+ 
 }
 
         
@@ -181,10 +187,10 @@ th {
 td { background: #FAFAFA; text-align: center; padding-left: 10px; height: 600px;}
 
         
-tr:nth-child(even) td { background: #272727;  font-weight: bold; border: 0px; font-size: 35px; padding-left: 15px; text-shadow: 1px 1px 1px black; 
+tr:nth-child(even) td { background: #272727;  font-weight: bold; border: 0px; font-size: 25px; padding-left: 15px; text-shadow: 1px 1px 1px black; 
 } 
 
-tr:nth-child(odd) td { background: #2284BA; font-weight: bold; border: 0px; font-size: 35px; padding-left: 15px; text-shadow: 1px 1px 1px black;
+tr:nth-child(odd) td { background: #2284BA; font-weight: bold; border: 0px; font-size: 25px; padding-left: 15px; text-shadow: 1px 1px 1px black;
 }
 
 
@@ -195,14 +201,7 @@ tr td:first-child, tr th:first-child {
     width: 10px;
 }
 
-/* Add border-radius to specific cells! */
-tr:first-child th:nth-child(2) { 
-  border-radius: 5px 0 0 0; 
-} 
 
-tr:first-child th:last-child { 
-  border-radius: 0 5px 0 0; 
-}
 
 
 #Logged_In{
@@ -263,8 +262,8 @@ tr:first-child th:last-child {
 /*
 CSS For Links.
 */
-a:link    { COLOR: black;}
-a:visited {COLOR: black;}
+a:link    { COLOR: white;}
+a:visited {COLOR: white;}
 a:hover   {COLOR: white;}
 a:link    {text-decoration:none;}
 
@@ -353,28 +352,117 @@ a:link    {text-decoration:none;}
         color: white;
 }
 
-
-#Head_Bar{
-        background-color:#0198E1;
-        width: 100%;
-        height: 100px;
-        position: fixed;
-        color: white;
-        font-size: 15px;
-  
-    top: 0px;
-    left: 0px;
-    border-style: solid;
-    border-color: black;
-    border-width: 0px;
-    border-left: 0px;
-    border-right:0px;
-    border-top:0px;
-
-    box-shadow: 15px 15px 10px #888888;
-    z-index: 3;
+#Button_Group_Left{
+ 
 }
 
+#Button:active{
+    width: 200px;
+       position:fixed;
+       z-index: 55;
+    top: 40%;
+    left: 10px;
+    color:white;
+    font-weight: bold;
+    background-color: #2284BA ;
+    border-radius:10px;
+    text-align: center;
+}
+
+#Button_Post{
+
+   position:fixed;
+    top: 40%;
+    left: 0;
+    width: 8%;
+    color:white;
+    font-weight: bold;
+    background-color: #2284BA ;
+    text-align: center;
+
+}
+
+
+#Button_Login{
+
+    width: 8%;
+   position:fixed;
+    top: 60%;
+    padding-top: 10px;
+    left: 0;
+    color:white;
+    font-weight: bold;
+    background-color: #2284BA ;
+    text-align: center;
+
+}
+
+#Button_Filter{
+
+    width: 8%;
+   position:fixed;
+    top: 53%;
+    padding-top: 10px;
+    left: 0;
+    
+    color:white;
+    font-weight: bold;
+    background-color: #2284BA ;
+    text-align: center;
+
+}
+
+
+
+#Button_Post:hover #Poster{
+    visibility: visible;
+    position:fixed;
+    width: 100%;
+    left: 0px;
+    background-color: white;
+    z-index: 9000;
+    height: 500px;
+    top: 30%;
+}
+
+
+#Button_Profile{
+
+    width: 8%;
+   position:fixed;
+    top: 46%;
+    padding-top: 10px;
+    left: 0;
+    
+    color:white;
+    font-weight: bold;
+    background-color: #2284BA ;
+    text-align: center;
+
+}
+
+
+
+
+#Side_Nav{
+    width: 12%;
+    left: 0;
+    height: 100%;
+    top:0;
+    position: fixed;
+    background-color: #272727;
+
+}
+
+#Side_Nav_R{
+    width: 12%;
+    right: 0;
+    height: 100%;
+    top:0;
+    position: fixed;
+    background-color: #272727;
+
+}
 
 .asc{
         background-color: blue;

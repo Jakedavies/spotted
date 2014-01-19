@@ -9,40 +9,43 @@
 <body>
 
 
-	
-	<!-- <div id="Head_Bar">
-    
+<div id="Poster">
+
+</div>
 
 
-			<h1 >  <%= link_to " Spotted", items_path, id:"Logo"  %></h1>
+<div id ="Side_Nav">
+ 
+   <div id="Button_Group_Left">
+      <a class="btn btn-lg btn-success " id="Button_Post" href="#">
+      <i class="fa fa-comment fa-2x pull-left"></i> Make a Post<br></a>
 
-      <div id="Filter_Box">
-        FILTER!
-      </div>
+      <div id="Button_Login">
 
-			<div id="Facebook_Login">			 
-		
-       <% if current_user %>
+      <a class="btn btn-lg btn-success "  color:"white" href="">
+     
+      <i class="fa fa-facebook fa-2x pull-left"></i> 
+            <% if current_user %>
+          <%= link_to "Sign Out?", signout_path, id: "sign_out" %>
+        <% else %>
+           <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+        <% end %> 
+      <br></a>
 
-          <div id ="Logged_In">
-	   			   Welcome <strong> <%= current_user.uid %> </strong>!   
-        	<%= link_to "Sign out", signout_path, id: "sign_out" %>
-          </div>
-          
-    		<% else %>
-          
-          <div id="Login_Button_Container"> 
-            
-            <div id="Login_Button">
-
-        	 <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-
-  		      </div>
-
-        </div>
-
-        <% end %>	
     </div>
+
+      <a class="btn btn-lg btn-success " id="Button_Filter" href="#">
+      <i class="fa fa-search fa-2x pull-left"></i> Filter<br></a>
+
+      <a class="btn btn-lg btn-success " id="Button_Profile" href="#">
+      <i class="fa fa-users fa-2x pull-left"></i>My Page<br></a>
+
+    </div>
+
+</div>
+
+<div id ="Side_Nav_R">
+ 
 </div>
 
 
@@ -53,7 +56,7 @@
 
 </div>
 
--->
+
 
 <div id="Post_Bar">
    <% if current_user %>
