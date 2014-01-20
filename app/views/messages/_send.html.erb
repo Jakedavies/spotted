@@ -1,0 +1,7 @@
+<div id="create a message" >
+  <%= form_for :messages , :url => messages_path, :html => {:method => :post} do |f| %>
+    Subject: <%= f.text_field :subject %> <br />
+    Post: <%= f.text_field :body %>
+    <%= f.submit "Send" %>
+  <% end %>
+</div>
