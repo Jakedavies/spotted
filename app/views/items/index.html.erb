@@ -4,43 +4,64 @@
   <%= stylesheet_link_tag "main.css" %>
 </head>
 <body>	
-	<div id="Head_Bar">
-		<h1 >  <%= link_to " Spotted", items_path, id:"Logo"  %></h1>
-      <div id="Filter_Box">
-        FILTER!
-      </div>
+<div id="Poster">
 
-			<div id="Facebook_Login">			 
-		
-       <% if current_user %>
-
-          <div id ="Logged_In">
-	   			   Welcome <strong> <%= current_user.uid %> </strong>!   
-        	<%= link_to "Sign out", signout_path, id: "sign_out" %>
-          </div>
-          
-    		<% else %>
-          
-          <div id="Login_Button_Container"> 
-            
-            <div id="Login_Button">
-
-        	 <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-
-  		      </div>
-
-        </div>
-
-        <% end %>	
-    </div>
 </div>
+
+
+<div id ="Side_Nav">
+ <div id="Button_Group_Left">
+    <div  id="Button_Post">
+      <a class="btn btn-lg btn-success " href="#">
+      <i class="fa fa-comment fa-2x pull-left"></i> Make a Post<br></a>
+    </div>
+    <div id="Button_Login">
+
+      <a class="btn btn-lg btn-success "  color:"white" href="">
+     
+      <i class="fa fa-facebook fa-2x pull-left"></i> 
+            <% if current_user %>
+          <%= link_to "Sign Out?", signout_path, id: "sign_out" %>
+        <% else %>
+           <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+        <% end %> 
+      <br></a>
+
+    </div>
+
+    <div id="Button_Filter">
+      <a class="btn btn-lg btn-success "  href="#">
+      <i class="fa fa-search fa-2x pull-left"></i> Filter<br></a>
+    </div>
+
+    <div id="Button_Profile">
+      <a class="btn btn-lg btn-success "  href="#">
+      <i class="fa fa-users fa-2x pull-left"></i>My Page<br></a>
+
+    </div>
+
+
+  
+
+ </div>
+</div>
+
+<div id ="Side_Nav_R">
+ 
+</div>
+
+
+
+
+
+<!--
+
 
 <div id="PostQ">
 
   <p>Want to Post?</p>
 
 </div>
-
 
 <div id="Post_Bar">
    <% if current_user %>
@@ -66,12 +87,15 @@
   
 </div>
 </div>
+-->
 
 <div id="Post_Section">
-  <!-- Sorting links -->
+  <!-- 
   <div id="Filter_Section">
     <h1>Sort by:     <%= sortable "created_at", "Date" %> <%= sortable "tag", "Tag" %>     <%= sortable "cached_votes_up", "Votes" %> </h1>
   </div>
+
+  Sorting links -->
     
     
     <!-- Populates Items -->
@@ -80,9 +104,11 @@
     <table class="PostIndex" id="items">
         <tr>
           <th>Upvotes</th>
-          <th>Why Hello There ;)</th>
-          <th>Where!</th>
-          <th>When</th>
+          <th></th>
+          <th>Posts </th>
+          <th></th>
+          <th>Where</th>
+          <th>   When</th>
           <th></th>
         </tr>
       <%= render @items %>

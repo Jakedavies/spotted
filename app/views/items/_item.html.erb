@@ -13,17 +13,21 @@
                       <% end %>
                   <% end %>
               <% else %>
-                  <%= button_to "Color", log_in_to_vote_index_path, :method => :get %>
+                  <%= button_to "Color", log_in_to_vote_index_path, :method => :get %> 
               <% end %>
 	     <%= item.cached_votes_up %>
             </div>
             </td>
-            <td> <%= item.post %></td> 
+            <td width:20px> <i class="fa fa-quote-left pull-left fa-2x align-left"> </i> </td>
+            <td> <%= item.post %>  </td> 
+            <td width: 20px> <i class="fa fa-quote-right fa-2x align-right"></i> </td>
             <td><%= item.tag %></td>
             <td><%= format_timesince(item.created_at) %></td>
+            
             <td id="delete_tag">
               <% if can_delete(item.created_at,item.user.to_i) %>
                   <%= link_to '✘', item_path(item), :confirm => 'Are you sure?', :method => :delete %>
               <% end %>
+
             </td>
         </tr>
