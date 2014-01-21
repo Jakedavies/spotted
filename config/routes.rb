@@ -5,6 +5,7 @@ TestApp::Application.routes.draw do
   get "welcome/index"
   get "log_in_to_vote/index"
   get "profile/index"
+  get "messages/popup"
  
  resources :conversations
  resources :items

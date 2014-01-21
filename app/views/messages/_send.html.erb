@@ -1,7 +1,7 @@
 <div id="create a message" >
   <%= form_for :messages , :url => messages_path, :html => {:method => :post} do |f| %>
-    Subject: <%= f.text_field :subject %> <br />
-    Post: <%= f.text_field :body %>
+    <%= f.hidden_field :to, :value => :poster %>
+    Post: <%= f.text_area :body, :cols => "50", :rows => "10", :maxlength => "600" %> <br>
     <%= f.submit "Send" %>
   <% end %>
 </div>

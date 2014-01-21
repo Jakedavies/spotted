@@ -20,13 +20,14 @@
             </td>
             <td width:20px> <i class="fa fa-quote-left pull-left fa-2x align-left"> </i> </td>
             <td> <%= item.post %>  </td> 
-            <td width: 20px> <i class="fa fa-quote-right fa-2x align-right"></i> </td>
-            <td><%= item.tag %></td>
+            <td width:20px > <i class="fa fa-quote-right fa-2x align-right"></i> </td>
+            <td>#<%= item.tag %></td>
             <td><%= format_timesince(item.created_at) %></td>
             
             <td id="delete_tag">
               <% if can_delete(item.created_at,item.user.to_i) %>
-                  <%= link_to '✘', item_path(item), :confirm => 'Are you sure?', :method => :delete %>
+                  <%= link_to '✘', item_path(item), :confirm => 'Are you sure?', :method => :delete %><br>
+                  <%= link_to '✉', messages_popup_path, :poster => item.user,:onclick=>"window.open(this.href,'create_company', 'height=300, width=600');return false;"%>
               <% end %>
 
             </td>

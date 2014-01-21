@@ -1,8 +1,9 @@
 class MessagesController < ApplicationController
   def create
-    @subject = params[:messages][:subject]
+    @subject = 'fuck subjects'
+    @to = User.find(params[:messages][:to])
     @body = params[:messages][:body]
-    current_user.send_message(current_user,@subject,@body )
+    current_user.send_message(@to,@subject,@body )
     redirect_to profile_index_path
   end
 end
