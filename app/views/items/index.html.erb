@@ -13,11 +13,11 @@
  <div id="Button_Group_Left">
     <div  id="Button_Post">
       <a class="btn btn-lg btn-success " href="#">
-      <i class="fa fa-comment fa-2x pull-left"></i> Make a Post<br></a>
+      <i class="fa fa-comment fa-2x pull-left"></i> <%= link_to 'Post', items_post_path, :onclick=>"window.open(this.href,'window1', 'height=300, width=600');return false;" %><br></a>
     </div>
     <div id="Button_Login">
 
-      <a class="btn btn-lg btn-success "  color:"white" href="">
+      <a class="btn btn-lg btn-success "  color:"white" href=""><!--nolan what is this it throws something about not having a closing tag in rubymine -->
      
       <i class="fa fa-facebook fa-2x pull-left"></i> 
             <% if current_user %>
@@ -26,7 +26,6 @@
            <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
         <% end %> 
       <br></a>
-
     </div>
 
     <div id="Button_Filter">
