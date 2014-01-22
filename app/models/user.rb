@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :items
   acts_as_voter
   acts_as_messageable
   def mailboxer_email(object)
