@@ -6,8 +6,6 @@ class ItemsController < ApplicationController
     @item = Item.find(id)
   end
   def index
-
-
     @filter_message= params[:search]
     if params[:search]!=nil&&params[:search]!=""
       #@items = Item.order('created_at DESC').paginate(:page => params[:page])
@@ -19,8 +17,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    params[:item][:user] = session[:user_id]
-    @item = Item.create!(params[:item])
+    @item = current_user.item .create!(params[:item])
     flash[:notice] = "Post Created"
     redirect_to items_path
   end

@@ -1,10 +1,7 @@
 class User < ActiveRecord::Base
   has_many :items
   acts_as_voter
-  acts_as_messageable
-  def mailboxer_email(object)
-    return nil
-  end
+  has_many :items
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider
@@ -15,4 +12,7 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+  has_many :user_conversations
+  has_many :conversations, :through => :user_conversations
+  has_many :messages, :through => :conversations
 end

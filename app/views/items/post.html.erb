@@ -1,0 +1,19 @@
+<% if current_user %>
+    <h3 id="post">Make A Post</h3>
+    <%= form_for :item, :html => {:method => :post} do |f| %>
+
+        <div id ="tagform"; class="rounded-corners">
+        Tag: <%= f.text_field :tag%><br />
+        </div>
+
+        <div id="postform">
+          Post: <%= f.text_field :post%><br />
+          <%= f.submit "Post", :id => 'submit_button' %>
+        </div>
+    <%end%>
+<%else%>
+
+    <br id="Not_Logged_In">
+    Please login to post
+    <br>
+<%end%>
