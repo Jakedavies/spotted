@@ -17,7 +17,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = current_user.item .create!(params[:item])
+    params[:item][:user_id] = current_user.id
+    @item = current_user.items.create!(params[:item])
     flash[:notice] = "Post Created"
     redirect_to items_path
   end

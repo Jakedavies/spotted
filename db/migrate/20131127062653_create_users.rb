@@ -12,6 +12,7 @@ class CreateUsers < ActiveRecord::Migration
       t.belongs_to :customer
       t.text :post
       t.text :tag
+      t.integer :user_id
       t.decimal :views
       t.timestamps
     end

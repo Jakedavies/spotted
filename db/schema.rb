@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20140117204554) do
     t.integer  "customer_id"
     t.text     "post"
     t.text     "tag"
+    t.integer  "user_id"
     t.decimal  "views"
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
