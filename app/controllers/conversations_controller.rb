@@ -7,4 +7,9 @@ class ConversationsController < ApplicationController
   def conversation
     @conversation ||= mailbox.conversations.find(params[:id])
   end
+  def show
+    id = params[:id]
+    @convo = Conversation.find(id)
+    @receipts = @convo.receipts_for current_user
+  end
 end

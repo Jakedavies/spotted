@@ -27,9 +27,9 @@
             <td id="delete_tag">
               <% if can_delete(item.created_at,item.user_id) %>
                   <%= link_to '✘', item_path(item), :confirm => 'Are you sure?', :method => :delete %><br>
-                  <%= link_to '✉', messages_popup_path(:user_id =>item.user_id),:onclick=>"window.open(this.href,'create_company', 'height=300, width=600');return false;"%>
+
               <% end %>
 
-              
+              <%= link_to '✉', messages_popup_path(:user_id =>item.user_id),:onclick=>"window.open(this.href,'create_company', 'height=300, width=600');return false;"%>
             </td>
         </tr>

@@ -1,8 +1,24 @@
 <% if current_user %>
-  <h3> Welcome <%= current_user.uid %> </h3>
-  <h5> This is your profile page, here you can change things and stuff </h5>
+    <h3> Welcome <%= current_user.uid %> </h3>
+    <h5> This is your profile page, here you can change things and stuff </h5>
+    <%=render "messages/send" %>
+
+    <h4>|messages|</h4>
+        <% @convos = current_user.mailbox.conversations %>
+        <%= content_tag_for(:li, @convos) do |conversation| %>
+            <% conversation.participants.each do |participant| %>
+                <% if participant != current_user %>
+                    <%= link_to participant.name, conversation %>
+                <% end %>
+            <% end %>
+        <%end%>
+
+
+
+
+
+
 <% else %>
-  <h1> Turn around now, you shouldn't be able to get here when you are not logged in! </h1>
+    <h1> Turn around now, you shouldn't be able to get here when you are not logged in! </h1>
 <% end %>
-<%=render "conversations/conversation" %>
-<%=render "messages/send" %>
+
