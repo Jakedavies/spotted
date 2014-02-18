@@ -16,5 +16,5 @@ class CreateUsers < ActiveRecord::Migration
       t.decimal :views
       t.timestamps
     end
-  end
+   end
 end
