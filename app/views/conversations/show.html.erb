@@ -1,4 +1,11 @@
+<% @receipts = @convo.receipts_for current_user %>
 <% @receipts.each do |receipt| %>
     <h3><%= receipt.message.sender.name %></h3><br>
     <%= receipt.message.body %>
 <%end%>
+<% @convo.participants.each do |participant| %>
+   <% if participant!= current_user %>
+        <%= participant.uid %>
+    <%= render :partial => "messages/send", :user_id => participant.uid %>
+  <% end %>
+<% end%>
