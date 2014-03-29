@@ -6,111 +6,20 @@ html{
 
 }
 
-#Facebook_Login{
-        float: right;
-        padding-right: 10%;
-}
-
-#post{
-        padding-left: 5%;
-}
-
-#submit_button{
-        
-        position: fixed;
-        right: 8px;
-        bottom: 10px;
-        visibility: hidden;
-}
-
-#PostQ{
-        font-size: 30px;
-        position: fixed;
-        bottom: 20px;
-        z-index: 2;
-        right: 2%;
-}
-
-
-#Post_Bar{
-        position: fixed;
-        bottom: 0px;
-        right: 0px;
-        z-index: 2;
-        border-style: solid;
-        border-width: 1px;
-        border-color: black;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        width: 30%;
-        height: 2%;
-        background-color: white;
-}
+/*This was cleaned on March.28th 2014 */
 
 
 
-/*POST BUTTON TEMP*/
-
-#Post_Bar:hover{
-        position: fixed;
-        bottom: 0px;
-        right: 0px;
-        z-index: 2;
-        border-style: solid;
-        border-width: 1px;
-        border-color: black;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        width: 30%;
-        height: 15%;
-        transition: all 5s ease-in-out -5s;
-        background-color: white;
-}
-
-
-#Post_Bar:hover #submit_button{
-        visibility: visible;
-}
-
-#Post_Bar:hover #
-
-
-#tagform{
-        float: right;
-        padding-right: 10px;
-}
-
-
-#postform{
-        float: right;
-        padding-right: 5px;
-
-}
-
-#Post_Section{
-        margin-top: 100px;
+.Post_Section section{
+ 
+       margin-top: 50%;
         float: below;
-        height: 1000px;
+        height: 60%;
         padding-left: 10%;
 
 }
 
 
-/*POST BUTTON TEMP*/
-
-#Post_Float_In{
-    position: absolute;
-    background-color: white;
-    border-style: solid; border-radius: 10px; border-color: black;
-    left: 50%;
-    width: 250px; /* Overall width of div */
-    height: 70px; /* Overall height of div */
-    top: -35px; /* half of the overall height */
-    margin-left: -125px; /* half of the overall width */
-    visibility: visible
-}
-
-
 #tagform{
         float: right;
         padding-right: 10px;
@@ -122,6 +31,74 @@ html{
         padding-right: 5px;
 
 }
+
+
+
+/*
+Main (center) Table Section
+*/
+
+.align-right{ position:right; float:right; margin:  200px 50px 0px 0px; padding-left: 5px;}
+.align-left { position:left;float: left; margin:   -150px 0px  0px 50px; padding-right: 5px;}
+
+.PostIndex { 
+  width:80%;
+  position: absolute;
+  top:0px;
+  color: white;
+  border-collapse: collapse;
+ 
+}
+
+        
+td, th {  border: 0 none; height: 50%; }
+            
+th {
+    text-shadow: 1px 1px 1px black;
+    background: #2284BA;
+    color: white ; font-weight: bold; font-size: 50px;
+    margin-top: 10%;
+    text-align: center;
+    padding-left:10px;
+
+}
+        
+td { background: #FAFAFA; text-align: center; padding-left: 10px; height: 500px;}
+
+        
+tr:nth-child(even) td { background: #272727;  font-weight: bold; border: 0px; padding-left: 15px; text-shadow: 1px 1px 1px black;  
+} 
+
+
+tr:nth-child(odd) td { background: #2284BA; font-weight: bold; border: 0px; padding-left: 15px; text-shadow: 1px 1px 1px black;
+}
+
+
+
+tr td:first-child, tr th:first-child {
+    border-spacing: 0 0px;
+    border-collapse: collapse;
+    width: 10px;
+}
+
+
+
+
+
+
+/*
+Links.
+*/
+a:link    { COLOR: white;}
+a:visited {COLOR: white;}
+a:hover   {COLOR: white;}
+a:link    {text-decoration:none;}
+
+
+/*
+---------------------fixed Navigation Bar on left
+*/
+
 
 #Post_Section{
         margin-top: 100px;
@@ -148,201 +125,9 @@ html{
     font-weight: bold;
 }
 
-/*CODE FROM http://codepen.io/mastastealth/pen/BHJLb
-*/
-
-.align-right{ position:right; float:right; margin:  200px 50px 0px 0px; padding-left: 5px;}
-.align-left { position:left;float: left; margin:   -150px 0px  0px 50px; padding-right: 5px;}
-
-.PostIndex { 
-  width:80%;
-  position: absolute;
-  top:0px;
-  color: white;
-  border-collapse: collapse;
- 
-}
-
-        
-td, th {  border: 0 none; height: 30px; }
-            
-th {
-    text-shadow: 1px 1px 1px black;
-    background: #2284BA;
-    color: white ; font-weight: bold; font-size: 50px;
-    height: 150px;
-    text-align: center;
-    padding-left:10px;
-
-}
-        
-td { background: #FAFAFA; text-align: center; padding-left: 10px; height: 600px;}
-
-        
-tr:nth-child(even) td { background: #272727;  font-weight: bold; border: 0px; font-size: 25px; padding-left: 15px; text-shadow: 1px 1px 1px black; 
-} 
-
-tr:nth-child(odd) td { background: #2284BA; font-weight: bold; border: 0px; font-size: 25px; padding-left: 15px; text-shadow: 1px 1px 1px black;
-}
 
 
 
-tr td:first-child, tr th:first-child {
-    border-spacing: 0 0px;
-    border-collapse: collapse;
-    width: 10px;
-}
-
-
-
-
-#Logged_In{
-        color: white;
-        width: 400px;
-        height: 20px;
-        position: fixed;
-        top: 3%;
-        right: 1%;
-}
-
-.fa{
-    width:100%;
-    vertical-align: middle;
-}
-
-#Logo{
-
-        width: 10%;
-        font-size: 40px;
-        color: white;
-        padding-left: 100px;
-        margin-bottom: auto;
-        z-index: 4;
-}
-
-#Logo:hover{
-        
-        padding-left: 100px;
-        margin-bottom: auto;
-        font-color: red ;
-        color: #d3d3d3;
-        font-size: 45px;
-}
-
-
-
-#Login_Button_Container{
-        width: 200px;
-        height: 20px;
-        border-style: solid;
-        border-color: black;
-        border-width: 1px;
-        border-radius: 10px;
-        position: fixed;
-        top: 3%;
-        right: 5%;
-        color: white;
-}
-
-#Login_Button{
-        font-size: 15px;
-        margin-left: 8%;
-}
-
-
-
-/*
-CSS For Links.
-*/
-a:link    { COLOR: white;}
-a:visited {COLOR: white;}
-a:hover   {COLOR: white;}
-a:link    {text-decoration:none;}
-
-#Post_Stats_Top{
-        float: left;
-        float: top;
-}
-#Post_Section_Bottom{
-    float: left;
-    float: below;
-}
-
-
-#tag{
-    font-size: 30px;
-    color: black;
-    font-weight: bold;
-    padding-left: 10px;
-
-}
-#cached_votes_up{
-    font-size: 30px;
-    color: black;
-    font-weight: bold;
-    padding-left: 10px;
-}
-#created_at{
-    font-size: 30px;
-    color: black;
-    font-weight: bold;
-    padding-left: 10px;
-}
-
-#Tag_Value{
-    float: right;
-    border-width: 1px;
-    border-style: solid;
-    border-color: black;
-    border-radius: 8px;
-
-
-}
-
-
-#Vote_Count{
-        
-         float: left;
-         border-width: 1px;
-         border-style: solid;
-         border-color: black;
-         border-radius: 8px;
-}
-
-#Filter_Box{
-        width: 100px;
-        border-style: solid;
-        border-color: black;
-        border-width: 1px;
-        border-radius: 10px;
-        position: fixed;
-        margin-bottom: auto;
-        top: 30px;
-        margin-left: -50px;
-         left: 50%;
-
-}
-
-#Filter_Box:active{
-        width: 200px;
-        border-style: solid;
-        border-color: black;
-        border-width: 1px;
-        border-radius: 10px;
-        position: fixed;
-        margin-bottom: auto;
-        top: 30px;
-                margin-left: -100px;
-         left: 50%;
-
-}
-
-
-#Not_Logged_In{
-        font-size:45px;
-        padding-top: 2px;
-        color: white;
-}
 
 #Button_Group_Left{
     position:fixed;
@@ -354,6 +139,22 @@ a:link    {text-decoration:none;}
     word-wrap: break-word
 }
 
+#Logged_In{
+        color: white;
+        width: 400px;
+        height: 20px;
+        position: fixed;
+        top: 3%;
+        right: 1%;
+}
+
+
+
+
+.fa{
+    width:100%;
+    vertical-align: middle;
+}
 
 
 #Button_Post{
@@ -391,19 +192,6 @@ a:link    {text-decoration:none;}
 }
 
 
-
-#Button_Post:hover #Poster{
-    visibility: visible;
-    position:fixed;
-    width: 100%;
-    left: 0px;
-    background-color: white;
-    z-index: 9000;
-    height: 500px;
-    top: 30%;
-}
-
-
 #Button_Profile{
     margin-top: 35px;
     color:white;
@@ -414,9 +202,9 @@ a:link    {text-decoration:none;}
 
 }
 
-
-
-
+/*
+------------------Two coloured side bars surrounding the middle table. 
+*/
 #Side_Nav{
     width: 12%;
     left: 0;
@@ -436,6 +224,8 @@ a:link    {text-decoration:none;}
     background-color: #272727;
 
 }
+
+/*----------------------------------------------------------------*/
 
 .asc{
         background-color: blue;
